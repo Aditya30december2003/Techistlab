@@ -11,12 +11,13 @@ const Navbar = () => {
       <div>
         <ul className='flex items-center gap-5'>
             <Link to='/'>Home</Link>
+            <Link to='/about'>About</Link>
             <Link to='/blog'>Blog</Link>
             <Link to='/careers'>Careers</Link>
             <Link to='/contact'>Contact</Link>
             <Link to='/portfolio'>Portfolio</Link>
             <Link to='/services'>Services</Link>
-            <Link to='/teams'>Teams</Link>
+            <Link to='/team'>Teams</Link>
             <div className='cursor-pointer border-2 p-2 border-black rounded-[100%]' onClick={()=>setTheme(!theme)}>{theme?<GoSun/>:<FaMoon/>}</div>
         </ul>
       </div>

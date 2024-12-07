@@ -6,6 +6,7 @@ import Careers from './pages/Careers'
 import Service from './pages/Services'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
+import Team from './pages/Team'
 function App() {
 
   return (
@@ -14,8 +15,8 @@ function App() {
      <Routes>
      <Route path='/' element={<Home/>}/>
       <Route path='/about' element={<About/>}/>
-      <Route path='/team' element={<Blog/>}/>
-      <Route path='/service' element={<Service/>}/>
+      <Route path='/team' element={<Team/>}/>
+      <Route path='/services' element={<Service/>}/>
       <Route path='/portfolio' element={<Portfolio/>}/>
       <Route path='/blog' element={<Blog/>}/>
       <Route path='/careers' element={<Careers/>}/>

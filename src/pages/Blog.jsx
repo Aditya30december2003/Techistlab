@@ -1,9 +1,8 @@
 
-
 const Blog = () => {
   return (
     <div>
-      Blog
+      Blog Page
     </div>
   )
 }
