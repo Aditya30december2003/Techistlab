@@ -1,10 +1,14 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
+import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
+import './index.css'
+import { BrowserRouter as Router } from 'react-router-dom'
+import 'aos/dist/aos.css';
+import AOS from 'aos'; 
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
+AOS.init(); 
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <Router>
     <App />
-  </StrictMode>,
+  </Router>,
 )
