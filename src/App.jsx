@@ -8,7 +8,7 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Team from './pages/Team'
 import Footer from './components/Footer'
-import AnimatedText from './components/AnimateText'
+import Contact from './pages/Contact'
 function App() {
 
   return (
@@ -22,6 +22,7 @@ function App() {
       <Route path='/portfolio' element={<Portfolio/>}/>
       <Route path='/blog' element={<Blog/>}/>
       <Route path='/careers' element={<Careers/>}/>
+      <Route path='/contact' element={<Contact/>}/>
      </Routes> 
      <Footer/>
 
