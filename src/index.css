@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.heading {
+    font-family: "Poppins", sans-serif;
+    font-size: 36px;
+    text-align: center;
+    stroke: #000;
+    stroke-width: 1;
+    fill: transparent;
+  }
+  

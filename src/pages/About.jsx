@@ -1,11 +1,11 @@
 const About = () => {
   return (
-    <div className="text-center py-[7rem]">
-      <h1 className="text-[3.4rem] font-bold">About Us</h1>
+    <div className="text-center py-[10rem]">
+      <h1 className="text-[1.8rem] font-bold">About Us</h1>
 
       <div className="mt-10">
-        <h1 className="text-[2rem] font-bold">Our Mission</h1>
-        <p className="text-[1.1rem] mb-[3rem] w-[80%] mx-auto">We believe that technology should simplify life, not complicate it. Our mission is to help businesses harness the power of digital solutions to improve efficiency, reach new audiences, and deliver exceptional customer experiences.</p>
+        <h1 className="text-[3.4rem] font-bold">Our Mission</h1>
+        <p className=" mb-[3rem] w-[80%] mx-auto">We believe that technology should simplify life, not complicate it. Our mission is to help businesses harness the power of digital solutions to improve efficiency, reach new audiences, and deliver exceptional customer experiences.</p>
       </div>
 
       <div><img className="lg:py-15 lg:px-20 p-4" src="https://images.ctfassets.net/kftzwdyauwt9/32cmTSUIF5POX5FMuoHJwO/be8b42b8016957ca28e07274f05f1d3d/stangel-2022-0527.webp?w=1920&q=90&fm=webp" alt="" /></div>

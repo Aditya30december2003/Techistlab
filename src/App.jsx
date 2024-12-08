@@ -8,6 +8,7 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Team from './pages/Team'
 import Footer from './components/Footer'
+import AnimatedText from './components/AnimateText'
 function App() {
 
   return (
@@ -23,6 +24,7 @@ function App() {
       <Route path='/careers' element={<Careers/>}/>
      </Routes> 
      <Footer/>
+
     </>
   )
 }
