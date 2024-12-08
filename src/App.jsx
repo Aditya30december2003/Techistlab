@@ -7,13 +7,14 @@ import Service from './pages/Services'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Team from './pages/Team'
+import Footer from './components/Footer'
 function App() {
 
   return (
     <>
     <Navbar/>
      <Routes>
-     <Route path='/' element={<Home/>}/>
+      <Route path='/' element={<Home />}/>
       <Route path='/about' element={<About/>}/>
       <Route path='/team' element={<Team/>}/>
       <Route path='/services' element={<Service/>}/>
@@ -21,6 +22,7 @@ function App() {
       <Route path='/blog' element={<Blog/>}/>
       <Route path='/careers' element={<Careers/>}/>
      </Routes> 
+     <Footer/>
     </>
   )
 }
