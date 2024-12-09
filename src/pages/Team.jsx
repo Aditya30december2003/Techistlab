@@ -8,7 +8,8 @@ import { SiTicktick } from "react-icons/si";
 const Team = () => {
   return (
     <div  className="mt-[10rem]">
-      <h1 className="text-center font-bold text-[1.5rem] lg:text-[1.8rem]">Our Team</h1>
+      <h1 className="text-center font-bold text-[1.5rem] lg:text-[1.8rem] heading">Our Team</h1>
+      <div className="w-[6rem] my-10 bg-black h-[0.2rem] text-center mx-auto"></div>
       <h1 className="text-center font-bold mt-10 text-[2.3rem] lg:text-[3rem] w-full lg:w-[70%] mx-auto">Skill, Vision, Dedication</h1>
       <p  className="text-center text-[1.2rem] w-full lg:w-[60%] mx-auto mt-10">We are a diverse group of designers, developers, and strategists who share a passion for innovation. With expertise spanning multiple industries and technologies, our team collaborates to bring the best of every discipline to your project.</p>
     

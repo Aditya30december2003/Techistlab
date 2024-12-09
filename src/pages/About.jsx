@@ -1,8 +1,8 @@
 const About = () => {
   return (
     <div className="text-center py-[10rem]">
-      <h1 className="text-[1.8rem] font-bold">About Us</h1>
-
+      <h1 className="text-[1.5rem] lg:text-[1.8rem] font-bold heading">About Us</h1>
+      <div className="w-[6rem] my-10 bg-black h-[0.2rem] text-center mx-auto"></div>
       <div className="mt-10">
         <h1 className="text-[3.4rem] font-bold">Our Mission</h1>
         <p className=" mb-[3rem] w-[80%] mx-auto">We believe that technology should simplify life, not complicate it. Our mission is to help businesses harness the power of digital solutions to improve efficiency, reach new audiences, and deliver exceptional customer experiences.</p>

@@ -8,7 +8,8 @@ import { MdArrowOutward } from "react-icons/md";
 const Services = () => {
   return (
     <div className="mt-[10rem]">
-      <h1 className="text-center font-bold text-[1.5rem] lg:text-[1.8rem]">Services</h1>
+      <h1 className="text-center font-bold text-[1.5rem] lg:text-[1.8rem] heading">Services</h1>
+      <div className="w-[6rem] my-10 bg-black h-[0.2rem] text-center mx-auto"></div>
       <h1 className="text-center font-bold mt-10 text-[2.3rem] lg:text-[3rem] w-full lg:w-[70%] mx-auto">Comprehensive Digital Solutions to Empower Your Business Growth</h1>
 
       <div className="p-10">
