@@ -64,42 +64,42 @@ const Navbar = () => {
          
         </div>
         {/* Mobile Menu Links */}
-        <ul className="grid grid-cols-2 mx-auto w-[70%]  items-center gap-10 text-[1rem] justify-between mt-10 py-5 ">
-          <Link className="flex flex-col items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)] py-10 rounded-[100%]" to="/" onClick={() => setNav(false)}>
+        <ul className="grid grid-cols-2 mx-auto w-[70%]  items-center gap-10 text-[1rem] justify-between mt-10 py-5 my-auto">
+          <Link className="flex flex-col items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)] mx-auto p-4 w-24 h-24 rounded-[10rem] gap-2" to="/" onClick={() => setNav(false)}>
             <CiHome size={25}/>
             <p>Home</p>
           </Link>
-          <Link className="flex flex-col items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)] py-10 rounded-[100%]" to="/about" onClick={() => setNav(false)}>
+          <Link className="flex flex-col items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)] mx-auto p-4 w-24 h-24 rounded-[10rem] gap-2" to="/about" onClick={() => setNav(false)}>
             <MdRoundaboutLeft size={25}/>
             <p>About</p>
           </Link>
-          <Link className="flex flex-col items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)] py-10 rounded-[100%]" to="/blog" onClick={() => setNav(false)}>
+          <Link className="flex flex-col items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)] mx-auto p-4 w-24 h-24 rounded-[10rem] gap-2" to="/blog" onClick={() => setNav(false)}>
             <RiBloggerLine size={25}/>
             <p>Blog</p>
           </Link>
-          <Link className="flex flex-col items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)] py-10 rounded-[100%]" to="/careers" onClick={() => setNav(false)}>
+          <Link className="flex flex-col items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)] mx-auto p-4 w-24 h-24 rounded-[10rem] gap-2" to="/careers" onClick={() => setNav(false)}>
           <HiMiniArrowTrendingUp size={25}/>
           <p>Careers</p>
           </Link>
-          <Link className="flex flex-col items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)] py-10 rounded-[100%]" to="/contact" onClick={() => setNav(false)}>
+          <Link className="flex flex-col items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)] mx-auto p-4 w-24 h-24 rounded-[10rem] gap-2" to="/contact" onClick={() => setNav(false)}>
             <CiVoicemail size={25}/>
             <p>Contact</p>
           </Link>
-          <Link className="flex flex-col items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)] py-10 rounded-[100%]" to="/portfolio" onClick={() => setNav(false)}>
+          <Link className="flex flex-col items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)] mx-auto p-4 w-24 h-24 rounded-[10rem] gap-2" to="/portfolio" onClick={() => setNav(false)}>
             <GrProjects/>
             <p>Portfolio</p>
           </Link>
-          <Link className="flex flex-col items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)] py-10 rounded-[100%]" to="/services" onClick={() => setNav(false)}>
+          <Link className="flex flex-col items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)] mx-auto p-4 w-24 h-24 rounded-[10rem] gap-2" to="/services" onClick={() => setNav(false)}>
             <MdOutlineMiscellaneousServices size={25}/>
             <p>Services</p>
           </Link>
-          <Link className="flex flex-col items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)] py-10 rounded-[100%]" to="/team" onClick={() => setNav(false)}>
+          <Link className="flex flex-col items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)] mx-auto p-4 w-24 h-24 rounded-[10rem] gap-2" to="/team" onClick={() => setNav(false)}>
            <RiTeamLine size={25}/>
            <p>Teams</p>
           </Link>
         </ul>
         <div
-            className="cursor-pointer py-10 rounded-[100%] flex flex-col items-center"
+            className="cursor-pointer py-10 shadow-[0_3px_10px_rgb(0,0,0,0.2)] flex flex-col items-center mx-auto p-4 w-24 h-24 rounded-[10rem] gap-2"
             onClick={() => setTheme(!theme)}
           >
             {theme ? <GoSun /> : <FaMoon />}
