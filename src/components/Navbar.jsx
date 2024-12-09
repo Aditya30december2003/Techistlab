@@ -4,18 +4,27 @@ import { FaMoon } from "react-icons/fa";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross1 } from "react-icons/rx";
+import { CiHome } from "react-icons/ci";
+import { MdRoundaboutLeft } from "react-icons/md";
+import { RiBloggerLine } from "react-icons/ri";
+import { HiMiniArrowTrendingUp } from "react-icons/hi2";
+import { CiVoicemail } from "react-icons/ci";
+import { RiTeamLine } from "react-icons/ri";
+import { MdOutlineMiscellaneousServices } from "react-icons/md";
+import { GrProjects } from "react-icons/gr";
+
 
 const Navbar = () => {
   const [theme, setTheme] = useState(false);
   const [nav, setNav] = useState(false);
 
   return (
-    <div>
+    <div className="">
       {/* Navbar */}
-      <div className="flex justify-between lg:justify-normal items-center px-2 py-4 mb-20 w-[100%] gap-5 border-b-2 border-black fixed bg-white top-0 left-0 z-50">
+      <div className="flex justify-between lg:justify-normal bg-white items-center px-2 py-4 mb-20 w-[100%] gap-5 fixed top-0 left-0 z-50 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] ">
         <div className="text-[2rem] font-bold w-[20%] px-4">Techistlab</div>
-        <div className="w-[80%] hidden lg:block">
-          <ul className="flex items-center gap-5 text-[1rem] justify-between">
+        <div className="w-[80%] hidden lg:block ">
+          <ul className="flex items-center gap-5 text-[1rem] justify-between ">
             <Link to="/">Home</Link>
             <Link to="/about">About</Link>
             <Link to="/blog">Blog</Link>
@@ -43,7 +52,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       <div
-        className={`fixed top-0 left-0 w-full h-screen bg-white text-black-400 transform ${
+        className={`fixed top-0 left-0 w-full h-screen bg-gray-300 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-30 border border-gray-100 text-black-400 transform ${
           nav ? "translate-y-0" : "-translate-y-full"
         } transition-transform duration-500 z-10 lg:hidden`}
       >
@@ -55,38 +64,46 @@ const Navbar = () => {
          
         </div>
         {/* Mobile Menu Links */}
-        <ul className="flex flex-col items-center gap-5 text-[1rem] justify-between mt-10 py-5">
-          <Link to="/" onClick={() => setNav(false)}>
-            Home
+        <ul className="grid grid-cols-2 mx-auto w-[70%]  items-center gap-10 text-[1rem] justify-between mt-10 py-5 ">
+          <Link className="flex flex-col items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)] py-10 rounded-[100%]" to="/" onClick={() => setNav(false)}>
+            <CiHome size={25}/>
+            <p>Home</p>
           </Link>
-          <Link to="/about" onClick={() => setNav(false)}>
-            About
+          <Link className="flex flex-col items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)] py-10 rounded-[100%]" to="/about" onClick={() => setNav(false)}>
+            <MdRoundaboutLeft size={25}/>
+            <p>About</p>
           </Link>
-          <Link to="/blog" onClick={() => setNav(false)}>
-            Blog
+          <Link className="flex flex-col items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)] py-10 rounded-[100%]" to="/blog" onClick={() => setNav(false)}>
+            <RiBloggerLine size={25}/>
+            <p>Blog</p>
           </Link>
-          <Link to="/careers" onClick={() => setNav(false)}>
-            Careers
+          <Link className="flex flex-col items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)] py-10 rounded-[100%]" to="/careers" onClick={() => setNav(false)}>
+          <HiMiniArrowTrendingUp size={25}/>
+          <p>Careers</p>
           </Link>
-          <Link to="/contact" onClick={() => setNav(false)}>
-            Contact
+          <Link className="flex flex-col items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)] py-10 rounded-[100%]" to="/contact" onClick={() => setNav(false)}>
+            <CiVoicemail size={25}/>
+            <p>Contact</p>
           </Link>
-          <Link to="/portfolio" onClick={() => setNav(false)}>
-            Portfolio
+          <Link className="flex flex-col items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)] py-10 rounded-[100%]" to="/portfolio" onClick={() => setNav(false)}>
+            <GrProjects/>
+            <p>Portfolio</p>
           </Link>
-          <Link to="/services" onClick={() => setNav(false)}>
-            Services
+          <Link className="flex flex-col items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)] py-10 rounded-[100%]" to="/services" onClick={() => setNav(false)}>
+            <MdOutlineMiscellaneousServices size={25}/>
+            <p>Services</p>
           </Link>
-          <Link to="/team" onClick={() => setNav(false)}>
-            Teams
+          <Link className="flex flex-col items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)] py-10 rounded-[100%]" to="/team" onClick={() => setNav(false)}>
+           <RiTeamLine size={25}/>
+           <p>Teams</p>
           </Link>
-          <div
-            className="cursor-pointer border-2 p-2 border-white rounded-[100%]"
+        </ul>
+        <div
+            className="cursor-pointer py-10 rounded-[100%] flex flex-col items-center"
             onClick={() => setTheme(!theme)}
           >
             {theme ? <GoSun /> : <FaMoon />}
           </div>
-        </ul>
       </div>
     </div>
   );
