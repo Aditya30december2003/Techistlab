@@ -88,7 +88,7 @@ const Navbar = () => {
         ></div>
 
         {/* Mobile Menu Links */}
-        <ul className="grid grid-cols-2 mx-auto w-[70%] items-center gap-10 text-[1rem] justify-between mt-10 py-5 my-auto">
+        <ul className="grid mt-20 grid-cols-2 mx-auto w-[70%] items-center gap-10 text-[1rem] justify-between mt-10 py-5 my-auto">
           <Link
             className="flex flex-col items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)] mx-auto p-4 w-24 h-24 rounded-[10rem] gap-2"
             to="/"
