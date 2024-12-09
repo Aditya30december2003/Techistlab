@@ -29,7 +29,7 @@ export default {
         }
       },
       animation: {
-        typing: "typing 7s steps(20) infinite alternate, blink .8s infinite"
+        typing: "typing 7s steps(100) infinite alternate, blink .8s infinite"
       }
     },
   },
