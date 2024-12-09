@@ -42,8 +42,8 @@ const Navbar = () => {
           isScrolled ? "shadow-md bg-white" : "bg-white"
         }`}
       >
-        <div className="text-[2rem] font-bold w-[15%] px-4">
-          <img className="w-[25rem]" src={logo} alt="Logo" />
+        <div className="text-[2rem] font-bold w-[50%] lg:w-[15%] px-4">
+          <img className="w-[45rem] lg:w-[25rem]" src={logo} alt="Logo" />
         </div>
         <div className="w-[60%]  hidden lg:block ">
           <ul className="flex  w-[100%] mx-auto items-center gap-10 text-[1rem] justify-between">
