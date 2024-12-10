@@ -24,7 +24,7 @@ const Team = () => {
         <div className="mx-auto bg-purple-500 text-white p-2 w-[100%] lg:w-[70%] mt-10 rounded-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]"  data-aos="fade-down"
         data-aos-duration="2000">
           <div className="flex items-center justify-between">
-          <h1 className="text-[2.4rem] font-bold">Integrity</h1>
+          <h1 className="text-[2rem] lg:text-[2.4rem] font-bold">Integrity</h1>
           <p><FaHandshake size={50}/></p>
           </div>
           <p className="text-left my-3 text-[0.9rem] lg:text-[1.1rem]">We build trust by maintaining transparency and standing by our commitments.</p>
@@ -34,7 +34,7 @@ const Team = () => {
         <div className="mx-auto bg-purple-500 text-white p-2 w-[100%] lg:w-[70%] mt-10 rounded-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]"  data-aos="fade-down"
         data-aos-duration="2000">
           <div className="flex items-center justify-between">
-          <h1 className="text-[2.4rem] font-bold">Innovation</h1>
+          <h1 className="text-[2rem] lg:text-[2.4rem] font-bold">Innovation</h1>
           <p><HiOutlineLightBulb size={50}/></p>
           </div>
           <p className="text-left my-3 text-[0.9rem] lg:text-[1.1rem]">We embrace emerging trends and technologies to continually push the boundaries of what’s possible.</p>
@@ -44,7 +44,7 @@ const Team = () => {
         <div className="mx-auto bg-purple-500 text-white p-2 w-[100%] lg:w-[70%] mt-10 rounded-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]" data-aos="fade-down"
         data-aos-duration="2000">
           <div className="flex items-center justify-between">
-          <h1 className="text-[2.4rem] font-bold">Partnership</h1>
+          <h1 className="text-[2rem] lg:text-[2.4rem] font-bold">Partnership</h1>
           <p><LuHeartHandshake size={50}/></p>
           </div>
           <p className="text-left my-3 text-[0.9rem] lg:text-[1.1rem]">We work alongside our clients, viewing their goals as our own.</p>
@@ -54,7 +54,7 @@ const Team = () => {
         <div className="mx-auto bg-purple-500 text-white p-2 w-[100%] lg:w-[70%] mt-10 rounded-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]" data-aos="fade-down"
         data-aos-duration="2000">
           <div className="flex items-center justify-between">
-          <h1 className="text-[2.4rem] font-bold">Quality</h1>
+          <h1 className="text-[2rem] lg:text-[2.4rem] font-bold">Quality</h1>
           <p><SiTicktick size={50}/></p>
           </div>
           <p className="text-left my-3 text-[0.9rem] lg:text-[1.1rem]">We hold ourselves to the highest standards, ensuring our products deliver value from day one.</p>
