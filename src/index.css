@@ -16,7 +16,7 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 [data-theme="light"] {
-  --bg-color: #ffffff;
+  --bg-color: #f4f2f2;
   --text-color: #333333;
   --heading-color: #444444;
 }
@@ -26,7 +26,7 @@
   --bg-color: #000000;
   --text-color: #ffffff;
   --heading-color: #dddddd;
-  --about-bg-color:rgb(33, 33, 33);
+  --about-bg-color:rgb(75, 75, 75);
 }
 
 html , body{

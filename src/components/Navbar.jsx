@@ -148,7 +148,7 @@ const Navbar = () => {
               onClick={toggleMode}
               className="cursor-pointer border-2 hidden lg:block   p-4 rounded-[100%]" data-aos="fade-up" data-aos-duration="2000"
             >
-              {!icon ? <GoSun size={30}/> : <FaMoon size={30}/>}
+              {!icon ? <GoSun size={25}/> : <FaMoon size={25}/>}
             </div>
         {/* Hamburger Icon */}
        
@@ -170,7 +170,7 @@ const Navbar = () => {
         {/* Close Icon */}
         <div
           onClick={() => setNav(false)}
-          className="ml-[85%] mt-5 bg-gray-500 p-2 rounded-[100%] cursor-pointer"
+          className="ml-[85%] mt-10 bg-gray-500 p-2 rounded-[100%] cursor-pointer"
         ></div>
 
         {/* Mobile Menu Links */}
