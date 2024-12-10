@@ -14,6 +14,8 @@ import { RiTeamLine } from "react-icons/ri";
 import { MdOutlineMiscellaneousServices } from "react-icons/md";
 import { GrProjects } from "react-icons/gr";
 import logo from '../assets/logo.png'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 const Navbar = () => {
   const [theme, setTheme] = useState(false);
@@ -24,6 +26,7 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10); // Add shadow after 10px scroll
+      Aos.init({duration:2000});
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -43,23 +46,23 @@ const Navbar = () => {
         }`}
       >
         <div className="text-[2rem] font-bold w-[50%] lg:w-[15%] px-4">
-          <img className="w-[45rem] lg:w-[25rem]" src={logo} alt="Logo" />
+          <img  className="w-[45rem] lg:w-[25rem]" src={logo} alt="Logo" data-aos="fade-up" data-aos-duration="2000"/>
         </div>
         <div className="w-[60%]  hidden lg:block ">
-          <ul className="flex  w-[100%] mx-auto items-center gap-10 text-[1rem] justify-between">
-            <Link to="/" className="underline-animation hover:text-purple-400">Home</Link>
-            <Link to="/about" className="underline-animation hover:text-purple-400">About</Link>
-            <Link to="/blog" className="underline-animation hover:text-purple-400">Blog</Link>
-            <Link to="/careers" className="underline-animation hover:text-purple-400">Careers</Link>
-            <Link to="/contact" className="underline-animation hover:text-purple-400">Contact</Link>
-            <Link to="/portfolio" className="underline-animation hover:text-purple-400">Portfolio</Link>
-            <Link to="/services" className="underline-animation hover:text-purple-400">Services</Link>
-            <Link to="/team" className="underline-animation hover:text-purple-400">Teams</Link>
+          <ul className="flex  w-[100%] mx-auto items-center gap-10 text-[1rem] justify-between" data-aos="fade-up" data-aos-duration="2000">
+            <Link   to="/" className="underline-animation hover:text-purple-400" data-aos="fade-up" data-aos-duration="2000">Home</Link>
+            <Link   to="/about" className="underline-animation hover:text-purple-400" data-aos="fade-up" data-aos-duration="2000">About</Link>
+            <Link   to="/blog" className="underline-animation hover:text-purple-400" data-aos="fade-up" data-aos-duration="2000">Blog</Link>
+            <Link   to="/careers" className="underline-animation hover:text-purple-400" data-aos="fade-up" data-aos-duration="2000">Careers</Link>
+            <Link   to="/contact" className="underline-animation hover:text-purple-400" data-aos="fade-up" data-aos-duration="2000">Contact</Link>
+            <Link   to="/portfolio" className="underline-animation hover:text-purple-400" data-aos="fade-up" data-aos-duration="2000">Portfolio</Link>
+            <Link   to="/services" className="underline-animation hover:text-purple-400" data-aos="fade-up" data-aos-duration="2000">Services</Link>
+            <Link   to="/team" className="underline-animation hover:text-purple-400" data-aos="fade-up" data-aos-duration="2000">Teams</Link>
             
           </ul>
         </div>
         <div
-              className="cursor-pointer border-2 hidden lg:block  p-2  border-black rounded-[100%]"
+              className="cursor-pointer border-2 hidden lg:block   p-2  border-black rounded-[100%]" data-aos="fade-up" data-aos-duration="2000"
               onClick={() => setTheme(!theme)}
             >
               {theme ? <GoSun /> : <FaMoon />}
@@ -88,7 +91,7 @@ const Navbar = () => {
         ></div>
 
         {/* Mobile Menu Links */}
-        <ul className="grid mt-20 grid-cols-2 mx-auto w-[70%] items-center gap-10 text-[1rem] justify-between mt-10 py-5 my-auto">
+        <ul className="grid mt-20 grid-cols-2 mx-auto w-[70%] items-center gap-10 text-[1rem] justify-between py-5 my-auto">
           <Link
             className="flex flex-col items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)] mx-auto p-4 w-24 h-24 rounded-[10rem] gap-2"
             to="/"

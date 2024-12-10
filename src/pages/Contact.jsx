@@ -1,21 +1,52 @@
+import { TypeAnimation } from "react-type-animation";
+
 const Contact = () => {
   return (
-    <div className="mt-[10rem]">
-      <h1 className="text-center font-bold text-[1.5rem] lg:text-[1.8rem] heading">Contact</h1>
-      <div className="w-[6rem] my-10 bg-black h-[0.2rem] text-center mx-auto"></div>
-      <h1 className="text-center font-bold mt-10 text-[2.3rem] lg:text-[3rem] w-full lg:w-[70%] mx-auto">
+    <div className="mt-[10rem] overflow-x-hidden"> {/* Added overflow-x-hidden */}
+      <h1
+        data-aos="fade-up"
+        data-aos-duration="2000"
+        className="text-center font-bold text-[1.5rem] lg:text-[1.8rem] heading"
+      >
+        Contact
+      </h1>
+      <div
+        className="w-[6rem] my-10 bg-black h-[0.2rem] text-center mx-auto"
+        data-aos="fade-up"
+        data-aos-duration="2000"
+      ></div>
+      <h1
+        data-aos="fade-up"
+        data-aos-duration="2000"
+        className="text-center font-bold mt-10 text-[2.3rem] lg:text-[3rem] w-full lg:w-[70%] mx-auto"
+      >
         We’re Here to Help You Succeed
       </h1>
 
       <p className="text-center text-[1.2rem] w-full lg:w-[60%] mx-auto mt-10">
-        Whether you have a clear project in mind or need guidance exploring digital opportunities, we’re ready to collaborate
+        <TypeAnimation
+          sequence={[
+            "Whether you have a clear project in mind or need guidance exploring digital opportunities, we’re ready to collaborate.",
+            1000,
+          ]}
+          wrapper="span"
+          speed={20}
+          className="text-6x1 font-bold text-black"
+          repeat={Infinity}
+        />
       </p>
 
       <div className="mt-[4rem] p-10">
-        <h1 className="text-[2.3rem] font-bold">Contact Form</h1>
+        <h1
+          className="text-[2.3rem] font-bold"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
+          Contact Form
+        </h1>
 
         {/* Contact Form */}
-        <div className="contact-form mb-6  p-2">
+        <div className="contact-form mb-6 p-2">
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -25,7 +56,9 @@ const Contact = () => {
 
               const mailtoLink = `mailto:aditya.219301361@muj.manipal.edu?subject=Contact%20from%20${encodeURIComponent(
                 name
-              )}&body=From:%20${encodeURIComponent(email)}%0A%0A${encodeURIComponent(message)}`;
+              )}&body=From:%20${encodeURIComponent(
+                email
+              )}%0A%0A${encodeURIComponent(message)}`;
               window.location.href = mailtoLink;
             }}
             className="space-y-4"
@@ -38,6 +71,8 @@ const Contact = () => {
                 required
                 className="p-2 outline-none border-b-2 mt-5"
                 placeholder="Your Name"
+                data-aos="fade-right"
+                data-aos-duration="2000"
               />
             </div>
 
@@ -49,6 +84,8 @@ const Contact = () => {
                 required
                 className="p-2 outline-none border-b-2 mt-5"
                 placeholder="Your Email"
+                data-aos="fade-left"
+                data-aos-duration="2000"
               />
             </div>
 
@@ -60,10 +97,17 @@ const Contact = () => {
                 className="p-2 border outline-none rounded"
                 rows="4"
                 placeholder="Your Message"
+                data-aos="fade-right"
+                data-aos-duration="2000"
               ></textarea>
             </div>
 
-            <button type="submit" className="subcolor1 text-white p-2 w-full rounded mx-auto">
+            <button
+              type="submit"
+              className="subcolor1 text-white p-2 w-full rounded mx-auto"
+              data-aos="fade-up"
+              data-aos-duration="2000"
+            >
               Send
             </button>
           </form>
@@ -71,20 +115,33 @@ const Contact = () => {
 
         {/* Contact Info and Google Map */}
         <div className="google-maps flex flex-col lg:flex-row mt-12 w-full">
-          <div className="contact-info mb-6 w-full lg:w-[50%]">
+          <div
+            className="contact-info mb-6 w-full lg:w-[50%]"
+            data-aos="fade-right"
+            data-aos-duration="2000"
+          >
             <h3 className="text-2xl font-semibold mb-2">Address</h3>
-            <p>Springdale Public School, 123 Education Lane, Cityville, State, ZIP Code</p>
+            <p>
+              Springdale Public School, 123 Education Lane, Cityville, State,
+              ZIP Code
+            </p>
 
             <h3 className="text-2xl font-semibold mt-4 mb-2">Phone</h3>
             <p>+1 (123) 456-7890</p>
 
             <h3 className="text-2xl font-semibold mt-4 mb-2">Email</h3>
             <p>
-              <a href="mailto:info@springdale.edu" className="text-blue-500">info@springdale.edu</a>
+              <a href="mailto:info@springdale.edu" className="text-blue-500">
+                info@springdale.edu
+              </a>
             </p>
           </div>
 
-          <div className='w-full lg:w-[50%]'>
+          <div
+            className="w-full lg:w-[50%]"
+            data-aos="fade-left"
+            data-aos-duration="2000"
+          >
             <h3 className="text-2xl font-semibold mb-4">Find Us on Google Maps</h3>
             <iframe
               title="Google Maps"
@@ -101,4 +158,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
