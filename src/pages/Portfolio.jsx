@@ -70,7 +70,7 @@ const Portfolio = () => {
 
 
       <div className='flex flex-col md:flex-row lg:flex-col md:w-[100%] gap-20 mb-20 mt-20'>
-        <div className="flex flex-col lg:flex-row items-center p-2 md:w-[100%] bg-gray-200 about">
+        <div className="flex flex-col lg:flex-row items-center p-2 md:w-[100%] bg-gray-200 testimonials">
           <div className='w-[30%]' data-aos="fade-right"
         data-aos-duration="2000">
           <img className="w-[20rem] lg:w-[12rem] mx-auto object-cover h-[7rem] lg:h-[12rem] rounded-[100%]" src={test1} alt="" />
@@ -83,7 +83,7 @@ const Portfolio = () => {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center p-2 md:w-[100%] bg-gray-200 about">
+        <div className="flex flex-col lg:flex-row items-center p-2 md:w-[100%] bg-gray-200 testimonials">
           <div className='w-[30%]' data-aos="fade-right"
         data-aos-duration="2000">
           <img className="w-[30rem] lg:w-[12rem] mx-auto object-cover h-[7rem] lg:h-[12rem] rounded-[100%]" src={test2} alt="" />
