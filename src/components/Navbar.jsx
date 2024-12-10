@@ -170,7 +170,7 @@ const Navbar = () => {
         {/* Close Icon */}
         <div
           onClick={() => setNav(false)}
-          className="ml-[85%] mt-10 bg-gray-500 p-2 rounded-[100%] cursor-pointer"
+          className="ml-[85%] mt-2 bg-gray-500 p-2 rounded-[100%] cursor-pointer"
         ></div>
 
         {/* Mobile Menu Links */}
