@@ -27,7 +27,7 @@ const Team = () => {
           <h1 className="text-[2.4rem] font-bold">Integrity</h1>
           <p><FaHandshake size={50}/></p>
           </div>
-          <p className="text-left my-3 text-[1.1rem]">We build trust by maintaining transparency and standing by our commitments.</p>
+          <p className="text-left my-3 text-[0.9rem] lg:text-[1.1rem]">We build trust by maintaining transparency and standing by our commitments.</p>
           <img src="" alt="" />
         </div>
 
@@ -37,7 +37,7 @@ const Team = () => {
           <h1 className="text-[2.4rem] font-bold">Innovation</h1>
           <p><HiOutlineLightBulb size={50}/></p>
           </div>
-          <p className="text-left my-3 text-[1.1rem]">We embrace emerging trends and technologies to continually push the boundaries of what’s possible.</p>
+          <p className="text-left my-3 text-[0.9rem] lg:text-[1.1rem]">We embrace emerging trends and technologies to continually push the boundaries of what’s possible.</p>
           <img src="" alt="" />
         </div>
 
@@ -45,9 +45,9 @@ const Team = () => {
         data-aos-duration="2000">
           <div className="flex items-center justify-between">
           <h1 className="text-[2.4rem] font-bold">Partnership</h1>
-          <p><FaHandshake size={50}/></p>
+          <p><LuHeartHandshake size={50}/></p>
           </div>
-          <p className="text-left my-3 text-[1.1rem]">We work alongside our clients, viewing their goals as our own.</p>
+          <p className="text-left my-3 text-[0.9rem] lg:text-[1.1rem]">We work alongside our clients, viewing their goals as our own.</p>
           <img src="" alt="" />
         </div>
 
@@ -55,9 +55,9 @@ const Team = () => {
         data-aos-duration="2000">
           <div className="flex items-center justify-between">
           <h1 className="text-[2.4rem] font-bold">Quality</h1>
-          <p><FaHandshake size={50}/></p>
+          <p><SiTicktick size={50}/></p>
           </div>
-          <p className="text-left my-3 text-[1.1rem]">We hold ourselves to the highest standards, ensuring our products deliver value from day one.</p>
+          <p className="text-left my-3 text-[0.9rem] lg:text-[1.1rem]">We hold ourselves to the highest standards, ensuring our products deliver value from day one.</p>
           <img src="" alt="" />
         </div>
 
