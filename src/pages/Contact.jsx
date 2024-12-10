@@ -2,7 +2,7 @@ import { TypeAnimation } from "react-type-animation";
 
 const Contact = () => {
   return (
-    <div className="mt-[10rem] overflow-x-hidden"> {/* Added overflow-x-hidden */}
+    <div className="mt-[10rem] md:mt-[5rem] lg:mt-[10rem] overflow-x-hidden"> {/* Added overflow-x-hidden */}
       <h1
         data-aos="fade-up"
         data-aos-duration="2000"

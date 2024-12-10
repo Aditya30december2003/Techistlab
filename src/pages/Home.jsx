@@ -12,13 +12,13 @@ const Home = () => {
     Aos.init({duration:2000});
   },[])
   return (
-    <div className="px-4 pt-[10rem]">
+    <div className="px-4 pt-[10rem] md:mt-[10rem] lg:mt-[1rem]" id="home">
       <div className="flex flex-col gap-4">
       {/* <p className="heading text-center text-[1.5rem] lg:text-[1.8rem] text-black font-bold">Techistlab</p>
       <div className="w-[6rem] my-10 bg-black h-[0.2rem] text-center mx-auto"></div> */}
-      <div className="text-[2.2rem] lg:text-[3rem]  text-black text-center w-[95%] lg:w-[60%] mx-auto font-extrabold heading" data-aos="fade-up"
+      <div className="text-[2.2rem] md:text-[5rem] lg:text-[3rem]  text-black text-center w-[95%] lg:w-[60%] mx-auto font-extrabold heading" data-aos="fade-up"
         data-aos-duration="2000" >Building <span className="">Digital Experiences</span> That Drive <span  className="">Success</span></div>
-      <div className="bg-gradient-to-r font-bold text-[1rem] lg:text-[1.3rem] mt-4 text-center w-[100%] lg:w-[50%] mx-auto">
+      <div className="bg-gradient-to-r font-bold text-[1rem] md:text-[2.5rem] lg:text-[1.3rem] mt-4 text-center w-[100%] lg:w-[50%] mx-auto">
       <TypeAnimation
 sequence={[
 "We craft custom web and mobile applications that help you connect with your audience, streamline operations, and scale with confidence.",
@@ -58,24 +58,24 @@ repeat= {Infinity}/>
           <div className="flex flex-col lg:grid lg:grid-cols-3 gap-16">
 
           <div data-aos="fade-right"
-        data-aos-duration="3000" className="border-2 cursor-pointer p-6 flex flex-col gap-2 rounded-md shadow-[10px_10px_1px_1px_#D6B4FC]  lg:hover:shadow-[10px_10px_1px_1px_#D6B4FC] hover:scale-105">
+        data-aos-duration="3000" className="border-2 cursor-pointer p-6 flex flex-col gap-2 rounded-md shadow-[10px_10px_1px_1px_#D6B4FC] lg:hover:shadow-[10px_10px_1px_1px_#D6B4FC] hover:scale-105">
                 <p><FaReact size={70}/></p>
                 <h1 className="font-bold text-[2rem]">Custom Web Development</h1>
-                <p className="text-[1.1rem]">Create scalable, secure, and high-performing websites tailored to your unique needs.</p>
+                <p className="text-[1.1rem] md:text-[1.8rem] lg:text-[1.1rem]">Create scalable, secure, and high-performing websites tailored to your unique needs.</p>
             </div>
 
             <div data-aos="fade-right"
         data-aos-duration="4000" className="border-2 cursor-pointer p-6 flex flex-col gap-2 rounded-md shadow-[10px_10px_1px_1px_#D6B4FC]  lg:hover:shadow-[10px_10px_1px_1px_#D6B4FC] hover:scale-105">
                 <p><SiAndroidstudio size={70}/></p>
                 <h1 className="font-bold text-[2rem]">Mobile App Development</h1>
-                <p className="text-[1.1rem]">Build engaging, intuitive, and future-ready applications for iOS and Android.</p>
+                <p className="text-[1.1rem] md:text-[1.8rem] lg:text-[1.1rem]">Build engaging, intuitive, and future-ready applications for iOS and Android.</p>
             </div>
                 
             <div className="border-2 cursor-pointer p-6 flex flex-col gap-2 rounded-md shadow-[10px_10px_1px_1px_#D6B4FC]  lg:hover:shadow-[10px_10px_1px_1px_#D6B4FC] hover:scale-105" data-aos="fade-right"
         data-aos-duration="1500">
                 <p><FaFigma size={70}/></p>
                 <h1 className="font-bold text-[2rem]">UI/UX Design</h1>
-                <p className="text-[1.1rem] mt-8">Design interfaces that captivate your audience and keep them coming back for more.</p>
+                <p className="text-[1.1rem] md:text-[1.8rem] lg:text-[1.1rem] mt-8">Design interfaces that captivate your audience and keep them coming back for more.</p>
             </div>
           </div>
             
@@ -84,14 +84,14 @@ repeat= {Infinity}/>
         data-aos-duration="1500">
                 <p><GiShoppingCart size={70}/></p>
                 <h1 className="font-bold text-[2rem]">E-commerce Solutions</h1>
-                <p className="text-[1.1rem] mt-14">Launch or enhance your online store with seamless checkout and integrated payment systems.</p>
+                <p className="text-[1.1rem] md:text-[1.8rem] lg:text-[1.1rem] mt-14">Launch or enhance your online store with seamless checkout and integrated payment systems.</p>
             </div>
 
             <div className="border-2 cursor-pointer p-6 flex flex-col gap-2 rounded-md shadow-[10px_10px_1px_1px_#D6B4FC]  lg:hover:shadow-[10px_10px_1px_1px_#D6B4FC] hover:scale-105" data-aos="fade-right"
         data-aos-duration="1500">
              <p><LuFileJson size={70}/></p>
              <h1 className="font-bold text-[2rem]">API & Integration Services</h1>
-             <p className="text-[1.1rem]">Connect with third-party tools and platforms to enhance your product’s capabilities.</p>
+             <p className="text-[1.1rem] md:text-[1.8rem] lg:text-[1.1rem]">Connect with third-party tools and platforms to enhance your product’s capabilities.</p>
             </div>
 
           </div>

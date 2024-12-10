@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <div className="text-center py-[10rem] overflow-hidden">
+    <div className="text-center py-[10rem] md:mt-[5rem] lg:mt-[1rem] overflow-hidden" id="about">
       <h1 className="text-[1.5rem] lg:text-[1.8rem] font-bold heading" data-aos="fade-up"
         data-aos-duration="1500">About Us</h1>
       <div className="w-[6rem] my-10 bg-black h-[0.2rem] text-center mx-auto" data-aos="fade-up"

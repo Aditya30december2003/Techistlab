@@ -47,15 +47,15 @@ const Services = ({
         <div className="absolute inset-0 flex items-center justify-between z-10 p-4">
           <button
             onClick={prev}
-            className="p-2 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white"
+            className="p-2 rounded-full shadow bg-white/20 hover:text-gray-800 hover:bg-white"
           >
-            <ChevronLeft size={40} />
+            <ChevronLeft   className="ArrowIcon"/>
           </button>
           <button
             onClick={next}
-            className="p-2 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white"
+            className="p-2 rounded-full shadow bg-white/20 text-gray-800 hover:bg-white"
           >
-            <ChevronRight size={40} />
+            <ChevronRight  className="ArrowIcon"/>
           </button>
         </div>
 

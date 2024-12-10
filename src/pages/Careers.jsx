@@ -2,7 +2,7 @@
 
 const Careers = () => {
   return (
-    <div className="mt-[10rem]">
+    <div className="mt-[10rem] md:mt-[20rem] lg:mt-[10rem]">
       <h1 className="text-center font-bold text-[1.5rem] lg:text-[1.8rem] heading">Careers</h1>
       <div className="w-[6rem] my-10 bg-black h-[0.2rem] text-center mx-auto"></div>
       <h1 className="text-center font-bold text-[1.5rem] lg:text-[3.7rem]">Discover your place at Techistlab</h1>

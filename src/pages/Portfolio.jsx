@@ -2,7 +2,7 @@ import test1 from '../assets/test1.png'
 import test2 from '../assets/test2.png'
 const Portfolio = () => {
   return (
-    <div className="mt-[10rem] overflow-hidden">
+    <div className="mt-[10rem] overflow-hidden md:mt-[5rem] lg:mt-[10rem]">
       <h1 className="text-center font-bold text-[1.5rem] lg:text-[1.8rem] heading" data-aos="fade-up"
         data-aos-duration="2000">Portfolio</h1>
       <div className="w-[6rem] my-10 bg-black h-[0.2rem] text-center mx-auto" data-aos="fade-up"
@@ -79,7 +79,7 @@ const Portfolio = () => {
         data-aos-duration="2000">
           
           <p className='text-[1rem] lg:text-[1.5rem] text-center lg:text-left'><super><span className='text-[2.3rem] font-bold'>66</span></super> The team at Techistlab exceeded our expectations with their attention to detail and dedication. Our new app has not only enhanced customer engagement but also streamlined our internal processes. <span className='text-[2.5rem] font-bold'>99</span></p>
-          <p className='text-[1.4rem] text-center lg:text-left font-bold '>Jane Doe, CEO of RetailCo</p>
+          <p className='text-[1.4rem] text-center lg:text-left font-bold text-purple-400/90'>Jane Doe, CEO of RetailCo</p>
           </div>
         </div>
 
@@ -91,7 +91,7 @@ const Portfolio = () => {
           <div className='w-full lg:w-[60%] flex flex-col gap-7' data-aos="fade-left"
         data-aos-duration="2000">
           <p className='text-[1rem] lg:text-[1.5rem] text-center lg:text-left'><super><span className='text-[2.3rem] font-bold'>66</span></super>Thanks to Techistlab, we were able to bring a critical tool to our patients and medical staff, improving our service quality tremendously. <span className='text-[2.5rem] font-bold'>99</span></p>
-          <p className='text-[1.1rem] text-center lg:text-left font-bold text-purple-400/90'>John Smith, Director at HealthPlus</p>
+          <p className='text-[1.4rem] text-center lg:text-left font-bold text-purple-400/90'>John Smith, Director at HealthPlus</p>
           </div>
         </div>
       </div>
