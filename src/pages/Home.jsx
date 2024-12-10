@@ -34,7 +34,7 @@ repeat= {Infinity}/>
       <div className="mx-auto text-center w-[95%] text-white lg:w-[45%] mt-14 flex items-center border p-2 rounded-[5rem]" data-aos="fade-up"
         data-aos-duration="2000">
         <input type="email" placeholder="email" className="border-none outline-none p-2 text-black w-[70%]"/>
-        <button className="text-center mx-auto subcolor1 text-white p-3 w-[30%] rounded-[5rem] text-[1rem] font-bold">Join Now</button>
+        <button className="text-center mx-auto subcolor1 text-white p-3 w-[30%] rounded-[5rem] text-[1rem] font-bold">Hire Us</button>
       </div>
       </div>
       

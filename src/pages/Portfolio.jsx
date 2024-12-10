@@ -8,7 +8,7 @@ const Portfolio = () => {
       <div className="w-[6rem] my-10 bg-black h-[0.2rem] text-center mx-auto" data-aos="fade-up"
         data-aos-duration="2000"></div>
 
-      <h1 className="text-center font-bold mt-10 text-[2.3rem] lg:text-[3rem] w-full lg:w-[70%] mx-auto" data-aos="fade-up"
+      <h1 className="text-center font-bold mt-10 text-[2.1rem] lg:text-[3rem] w-full lg:w-[70%] mx-auto" data-aos="fade-up"
         data-aos-duration="2000">Discover solutions, spark creativity, and boost your productivity.</h1>
 
       <p className="text-center text-[1.2rem] w-full lg:w-[60%] mx-auto mt-10"  data-aos="fade-up"
@@ -27,7 +27,7 @@ const Portfolio = () => {
        <div className='w-full lg:w-[45%] flex flex-col gap-5'  data-aos="fade-down"
         data-aos-duration="2000">
         <h1 className='text-center font-bold text-[2.5rem]'>Retail Revolution</h1>
-        <p className='text-[1.2rem] text-center'>See how we developed a mobile shopping app that increased a retail client's sales by 30% within six months. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium blanditiis nemo ab, sit cupiditate explicabo nihil facere expedita neque, nobis, atque tenetur cum? Quae, accusamus quo! Accusamus rem nam aperiam illo! Corporis necessitatibus beatae amet repudiandae unde, ratione voluptatem.</p>
+        <p className='text-[0.9rem] lg:text-[1.2rem] text-center'>See how we developed a mobile shopping app that increased a retail client's sales by 30% within six months. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium blanditiis nemo ab, sit cupiditate explicabo nihil facere expedita neque, nobis, atque tenetur cum? Quae, accusamus quo! Accusamus rem nam aperiam illo! Corporis necessitatibus beatae amet repudiandae unde, ratione voluptatem.</p>
         </div>
 
       </div>
