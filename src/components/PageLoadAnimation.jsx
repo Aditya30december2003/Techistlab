@@ -33,7 +33,7 @@ const PageLoadAnimation = ({ children }) => {
         >
           {/* Text Animation */}
           <motion.div
-            className="text-7xl font-bold text-white mb-4"
+            className="text-5xl lg:text-7xl font-bold text-white mb-4"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ 
               opacity: 1, 
