@@ -20,7 +20,7 @@ const About = () => {
         data-aos-duration="1500">Our Approach</h1>
         
         <div data-aos="fade-down"
-        data-aos-duration="2000" className="flex flex-col lg:flex-row justify-between  items-center mt-[3rem] mx-auto shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] rounded-[1.3rem] w-full lg:w-[90%]">
+        data-aos-duration="2000" className="about flex flex-col lg:flex-row justify-between  items-center mt-[3rem] mx-auto shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] rounded-[1.3rem] w-full lg:w-[90%]">
           <div className="text-left p-10 flex w-full lg:w-[40%] flex-col gap-5">
           <h1 className="text-[2.2rem] font-bold">Discovery</h1>
           <p>We begin by understanding your goals, challenges, and target market, ensuring our strategies are aligned with your vision.</p>
@@ -34,7 +34,7 @@ const About = () => {
         data-aos-duration="2000"><img className="lg:py-15 lg:px-20 p-4 mt-24 w-[100rem]" src="https://images.ctfassets.net/kftzwdyauwt9/7fnM7WwfGlji0mE0t8DefO/cc161016b8d84fd6d789b06c92416544/stangel-openAI-offices-2022-1714.webp?w=1920&q=90&fm=webp" alt="" /></div>
 
         <div data-aos="fade-down"
-        data-aos-duration="2000" className="flex flex-col lg:flex-row justify-between items-center mt-[3rem] mx-auto shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] rounded-[1.3rem] w-full lg:w-[90%]">
+        data-aos-duration="2000" className="about flex flex-col lg:flex-row justify-between items-center mt-[3rem] mx-auto shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] rounded-[1.3rem] w-full lg:w-[90%]">
           <div className="text-left p-10 flex w-full lg:w-[40%] flex-col gap-5">
           <h1 className="text-[2.2rem] font-bold">Design</h1>
           <p>We focus on creating user-centric designs that prioritise intuition, aesthetics, and accessibility.</p>
@@ -48,7 +48,7 @@ const About = () => {
         data-aos-duration="2000"><img className="lg:py-15 lg:px-20 p-4 mt-24 w-[100rem]" src="https://images.ctfassets.net/kftzwdyauwt9/2ROfAZ7SlUiikj2Hp98LS0/7e71fd438017ce9cebe46fdce580bb04/stangel-2022-1534.webp?w=1920&q=90&fm=webp" alt="" /></div>
 
         <div data-aos="fade-down"
-        data-aos-duration="2000" className="flex flex-col lg:flex-row justify-between items-center mt-[3rem] mx-auto shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] rounded-[1.3rem] w-full lg:w-[90%]">
+        data-aos-duration="2000" className="about flex flex-col lg:flex-row justify-between items-center mt-[3rem] mx-auto shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] rounded-[1.3rem] w-full lg:w-[90%]">
           <div  className="text-left p-10 flex  w-full lg:w-[40%] flex-col gap-5">
           <h1 className="text-[2.2rem] font-bold">Development</h1>
           <p>Our development team ensures every product is secure, scalable, and optimised for performance.</p>
@@ -63,7 +63,7 @@ const About = () => {
 
 
         <div data-aos="fade-down"
-        data-aos-duration="2000" className="flex flex-col lg:flex-row justify-between items-center mt-[3rem] mx-auto shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] rounded-[1.3rem] w-full lg:w-[90%]">
+        data-aos-duration="2000" className="about flex flex-col lg:flex-row justify-between items-center mt-[3rem] mx-auto shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] rounded-[1.3rem] w-full lg:w-[90%]">
           <div className="text-left p-10 flex flex-col gap-5 w-full lg:w-[40%]">
           <h1  className="text-[2.2rem] font-bold">Testing & Launch</h1>
           <p>Before going live, we rigorously test every aspect to ensure a flawless user experience.</p>
@@ -77,7 +77,7 @@ const About = () => {
         data-aos-duration="2000"><img className="lg:py-15 lg:px-20 p-4 mt-24 w-[100rem]" src="https://images.pexels.com/photos/5816286/pexels-photo-5816286.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" /></div>
 
         <div data-aos="fade-down"
-        data-aos-duration="2000" className="flex flex-col lg:flex-row justify-between items-center mt-[3rem]  shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] rounded-[1.3rem] w-full lg:w-[90%] mx-auto">
+        data-aos-duration="2000" className="about flex flex-col lg:flex-row justify-between items-center mt-[3rem]  shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] rounded-[1.3rem] w-full lg:w-[90%] mx-auto">
           <div className="text-left p-10 flex flex-col gap-5 w-[100%] lg:w-[40%]">
           <h1 className="text-[2.2rem] font-bold">Continuous Improvement</h1>
           <p> We monitor performance, gather feedback, and iterate to help your product evolve with changing market needs.</p>

@@ -17,7 +17,7 @@ const Portfolio = () => {
       
       <div>
 
-      <div className='flex flex-col lg:flex-row gap-5 p-10 mt-20 items-center w-[90%] shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] duration-700 lg:hover:shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] mx-auto'>
+      <div className='about flex flex-col lg:flex-row gap-5 p-10 mt-20 items-center w-[90%] shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] duration-700 lg:hover:shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] mx-auto'>
 
        <div className='w-full lg:w-[55%] '  data-aos="fade-up"
         data-aos-duration="2000">
@@ -33,7 +33,7 @@ const Portfolio = () => {
       </div>
 
 
-      <div className='flex flex-col lg:flex-row gap-5 p-10 mt-20 items-center w-[90%] shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]   duration-700 lg:hover:shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] mx-auto cursor-pointer'>
+      <div className='about flex flex-col lg:flex-row gap-5 p-10 mt-20 items-center w-[90%] shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]   duration-700 lg:hover:shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] mx-auto cursor-pointer'>
         <div className='w-full lg:w-[45%] lg:hidden' data-aos="fade-up"
         data-aos-duration="2000">
           <img className='object-cover' src="https://s3-alpha.figma.com/hub/file/4153417031/7808a72d-2fea-4257-86c6-b40c2029bd28-cover.png" alt="" />
@@ -49,7 +49,7 @@ const Portfolio = () => {
         </div>
         </div>
         
-        <div className='flex flex-col lg:flex-row gap-5 p-10 mt-20 items-center w-[90%] shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] duration-700 lg:hover:shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] mx-auto cursor-pointer'>
+        <div className='about flex flex-col lg:flex-row gap-5 p-10 mt-20 items-center w-[90%] shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] duration-700 lg:hover:shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] mx-auto cursor-pointer'>
           <div className='w-full lg:w-[55%] ' data-aos="fade-down"
         data-aos-duration="2000">
              <img className='object-cover w-full lg:w-[75%]' src="https://psu-gatsby-files-prod.s3.amazonaws.com/s3fs-public/2023/09/engagement-app-news-header_1200x900-a.png" alt="" />
@@ -70,7 +70,7 @@ const Portfolio = () => {
 
 
       <div className='flex flex-col md:flex-row lg:flex-col md:w-[100%] gap-20 mb-20 mt-20'>
-        <div className="flex flex-col lg:flex-row items-center p-2 md:w-[100%] bg-gray-200">
+        <div className="flex flex-col lg:flex-row items-center p-2 md:w-[100%] bg-gray-200 about">
           <div className='w-[30%]' data-aos="fade-right"
         data-aos-duration="2000">
           <img className="w-[20rem] lg:w-[12rem] mx-auto object-cover h-[7rem] lg:h-[12rem] rounded-[100%]" src={test1} alt="" />
@@ -83,7 +83,7 @@ const Portfolio = () => {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center p-2 md:w-[100%] bg-gray-200">
+        <div className="flex flex-col lg:flex-row items-center p-2 md:w-[100%] bg-gray-200 about">
           <div className='w-[30%]' data-aos="fade-right"
         data-aos-duration="2000">
           <img className="w-[30rem] lg:w-[12rem] mx-auto object-cover h-[7rem] lg:h-[12rem] rounded-[100%]" src={test2} alt="" />

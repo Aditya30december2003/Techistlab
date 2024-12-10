@@ -12,10 +12,12 @@ import Contact from './pages/Contact'
 import ServicesContainer from './pages/Services'
 import ScrollTop from './components/scrollTop'
 import PageLoadAnimation from './components/PageLoadAnimation'
+import {ThemeProvider} from './Context/ThemeContext'
 function App() {
 
   return (
     <>
+    <ThemeProvider>
     <Navbar/>
     <ScrollTop/>
      <Routes>
@@ -29,6 +31,7 @@ function App() {
       <Route path='/contact' element={<Contact/>}/>
      </Routes> 
      <PageLoadAnimation> <Footer/></PageLoadAnimation>
+     </ThemeProvider>
     </>
   )
 }

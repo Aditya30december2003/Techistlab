@@ -31,7 +31,7 @@ const Contact = () => {
           ]}
           wrapper="span"
           speed={20}
-          className="text-6x1 font-bold text-black"
+          className="text-6x1 font-bold"
           repeat={Infinity}
         />
       </p>
@@ -69,7 +69,7 @@ const Contact = () => {
                 id="name"
                 name="name"
                 required
-                className="p-2 outline-none border-b-2 mt-5"
+                className="p-2 outline-none border-b-2 mt-5 bg-transparent"
                 placeholder="Your Name"
                 data-aos="fade-right"
                 data-aos-duration="2000"
@@ -82,7 +82,7 @@ const Contact = () => {
                 id="email"
                 name="email"
                 required
-                className="p-2 outline-none border-b-2 mt-5"
+                className="p-2 outline-none border-b-2 mt-5 bg-transparent"
                 placeholder="Your Email"
                 data-aos="fade-left"
                 data-aos-duration="2000"
@@ -94,7 +94,7 @@ const Contact = () => {
                 id="message"
                 name="message"
                 required
-                className="p-2 border outline-none rounded"
+                className="p-2 border outline-none rounded bg-transparent"
                 rows="4"
                 placeholder="Your Message"
                 data-aos="fade-right"

@@ -16,9 +16,9 @@ const Home = () => {
       <div className="flex flex-col gap-4">
       {/* <p className="heading text-center text-[1.5rem] lg:text-[1.8rem] text-black font-bold">Techistlab</p>
       <div className="w-[6rem] my-10 bg-black h-[0.2rem] text-center mx-auto"></div> */}
-      <div className="text-[2.2rem] md:text-[5rem] lg:text-[3rem]  text-black text-center w-[95%] lg:w-[60%] mx-auto font-extrabold heading" data-aos="fade-up"
+      <div className="text-[2.2rem] md:text-[5rem] lg:text-[3rem] text-center w-[95%] lg:w-[60%] mx-auto font-extrabold heading" data-aos="fade-up"
         data-aos-duration="2000" >Building <span className="">Digital Experiences</span> That Drive <span  className="">Success</span></div>
-      <div className="bg-gradient-to-r font-bold text-[1rem] md:text-[2.5rem] lg:text-[1.3rem] mt-4 text-center w-[100%] lg:w-[50%] mx-auto">
+      <div className="bg-gradient-to-r font-bold text-[1rem] md:text-[2.5rem] lg:text-[1.3rem] mt-4 text-center w-[100%] lg:w-[80%] mx-auto">
       <TypeAnimation
 sequence={[
 "We craft custom web and mobile applications that help you connect with your audience, streamline operations, and scale with confidence.",
@@ -26,14 +26,14 @@ sequence={[
 ]}
 wrapper="span"
 speed={20}
-className="text-6x1 font-bold text-black"
+className="text-6x1 font-bold "
 repeat= {Infinity}/>
         {/* We craft custom web and mobile applications that help you connect with your audience, streamline operations, and scale with confidence. */}
       </div>
       
-      <div className="mx-auto text-center w-[95%] text-white lg:w-[45%] mt-14 flex items-center border p-2 rounded-[5rem]" data-aos="fade-up"
+      <div className="mx-auto text-center w-[95%] text-white lg:w-[45%] mt-28 lg:mt-20 flex items-center border p-2 rounded-[5rem]" data-aos="fade-up"
         data-aos-duration="2000">
-        <input type="email" placeholder="email" className="border-none outline-none p-2 text-black w-[70%]"/>
+        <input type="email" placeholder="email" className="border-none outline-none p-2 bg-transparent w-[70%]"/>
         <button className="text-center mx-auto subcolor1 text-white p-3 w-[30%] rounded-[5rem] text-[1rem] font-bold">Hire Us</button>
       </div>
       </div>

@@ -16,11 +16,17 @@ import { GrProjects } from "react-icons/gr";
 import logo from '../assets/logo.png'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
+import { useTheme } from "../Context/ThemeContext";
 
 const Navbar = () => {
-  const [theme, setTheme] = useState(false);
+  const {theme, toggleTheme} = useTheme();
+  const [icon , setIcon] = useState(true)
   const [nav, setNav] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const toggleMode = () => {
+    setIcon(!icon)
+    toggleTheme();
+  };
 
   // Track scroll position
   useEffect(() => {
@@ -56,7 +62,7 @@ const Navbar = () => {
       {/* Navbar */}
       <div
         className={`flex justify-between lg:gap-10  items-center px-2 py-4 mb-20 w-[100%] fixed top-0 left-0 z-50 transition-shadow duration-300 ${
-          isScrolled ? "shadow-md bg-white" : "bg-white"
+          isScrolled ? "shadow-md navbg" : "navbg"
         }`}
       >
         <div className="text-[2rem] font-bold w-[50%] lg:w-[15%] px-4">
@@ -139,10 +145,10 @@ const Navbar = () => {
           </ul>
         </div>
         <div
-              className="cursor-pointer border-2 hidden lg:block   p-2  border-black rounded-[100%]" data-aos="fade-up" data-aos-duration="2000"
-              onClick={() => setTheme(!theme)}
+              onClick={toggleMode}
+              className="cursor-pointer border-2 hidden lg:block   p-4 rounded-[100%]" data-aos="fade-up" data-aos-duration="2000"
             >
-              {theme ? <GoSun /> : <FaMoon />}
+              {!icon ? <GoSun size={30}/> : <FaMoon size={30}/>}
             </div>
         {/* Hamburger Icon */}
        
@@ -244,9 +250,9 @@ const Navbar = () => {
         </ul>
         <div
           className="cursor-pointer py-10 shadow-[0_3px_10px_rgb(0,0,0,0.2)] flex flex-col items-center mx-auto p-4 w-24 h-24 rounded-[10rem] gap-2"
-          onClick={() => setTheme(!theme)}
+          onClick={toggleMode}
         >
-          {theme ? <GoSun /> : <FaMoon />}
+          {!icon ? <GoSun /> : <FaMoon />}
         </div>
       </div>
     </div>
