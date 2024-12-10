@@ -69,7 +69,7 @@ const Navbar = () => {
           <img  className="w-[45rem] lg:w-[25rem]" src={logo} alt="Logo" data-aos="fade-up" data-aos-duration="2000"/>
         </div>
         <div className="w-[60%]  hidden lg:block ">
-          <ul className="flex  w-[100%] mx-auto items-center gap-10 text-[1rem] justify-between" data-aos="fade-up" data-aos-duration="2000">
+          <ul className="flex  w-[100%]  mx-auto items-center gap-10 text-[1rem] md:text-[0.8rem] lg:text-[1rem] justify-between" data-aos="fade-up" data-aos-duration="2000">
             <NavLink 
               to="/" 
               style={activeNavLinkStyle}
