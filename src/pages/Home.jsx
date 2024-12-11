@@ -69,7 +69,7 @@ const Home = () => {
   return (
     <div className="px-4 pt-[10rem] md:mt-[10rem] lg:mt-[1rem]" id="home">
       <div className="flex flex-col gap-4">
-      <p className="text-center text-[1.1rem] lg:text-[1.8rem] text-black font-bold" data-aos="fade-up"
+      <p className="text-center text-[1.1rem] lg:text-[1.8rem] font-bold" data-aos="fade-up"
         data-aos-duration="2000" >{content.taglineA}</p>
       <div className="w-[6rem] my-10 bg-black h-[0.2rem] text-center mx-auto"></div>
       <div className="text-[2.2rem] md:text-[5rem] lg:text-[3rem] text-center w-[95%] lg:w-[60%] mx-auto font-extrabold heading" data-aos="fade-up"
