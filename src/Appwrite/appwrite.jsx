@@ -10,13 +10,6 @@ client
 const databases = new Databases(client);
 
 // Example: fetching documents from a collection
-databases.listDocuments('67594b2b0006d71a548d')
-  .then(response => {
-    console.log('Documents:', response);
-  })
-  .catch(error => {
-    console.error('Error fetching documents:', error);
-  });
 
 export { client, databases };
 
