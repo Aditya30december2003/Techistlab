@@ -59,7 +59,7 @@ const Careers = () => {
   }
   if (!content) return <BufferAnimation/>;
   return (
-    <div className="mt-[10rem] md:mt-[20rem] lg:mt-[10rem]">
+    <div className="mt-[10rem] md:mt-[20rem] lg:mt-[10rem] mb-20">
       <h1 className="text-center font-bold text-[1.5rem] lg:text-[1.8rem] heading" data-aos="fade-up"
         data-aos-duration="2000">Careers</h1>
       <div className="w-[6rem] my-10 bg-black h-[0.2rem] text-center mx-auto" data-aos="fade-up"
@@ -77,8 +77,8 @@ const Careers = () => {
         {/* Job 1 */}
         <div className="border border-gray-300 shadow-lg p-6 rounded-lg hover:shadow-xl transition duration-300 cursor-pointer">
           <h2 className="text-xl font-semibold">{content.Job1}</h2>
-          <p className="text-gray-600 mt-2">Location: {content.Location1}</p>
-          <p className="mt-4 text-gray-800">
+          <p className="">Location: {content.Location1}</p>
+          <p className="mt-4 ">
             {content.Job1C}
           </p>
         </div>
@@ -87,8 +87,8 @@ const Careers = () => {
         <div className="border border-gray-300 shadow-lg p-6 rounded-lg hover:shadow-xl transition duration-300 cursor-pointer" data-aos="fade-up"
         data-aos-duration="2000">
           <h2 className="text-xl font-semibold">{content.Job2}</h2>
-          <p className="text-gray-600 mt-2">Location: {content.Location2}</p>
-          <p className="mt-4 text-gray-800">
+          <p className=" mt-2">Location: {content.Location2}</p>
+          <p className="mt-4">
           {content.Job2C}
           </p>
         </div>
@@ -97,8 +97,8 @@ const Careers = () => {
         <div className="border border-gray-300 shadow-lg p-6 rounded-lg hover:shadow-xl transition duration-300 cursor-pointer" data-aos="fade-up"
         data-aos-duration="2000">
           <h2 className="text-xl font-semibold">{content.Job3}</h2>
-          <p className="text-gray-600 mt-2">Location: {content.Location3}</p>
-          <p className="mt-4 text-gray-800">
+          <p className=" mt-2">Location: {content.Location3}</p>
+          <p className="mt-4 ">
           {content.Job3C}
           </p>
         </div>
