@@ -60,15 +60,20 @@ const Careers = () => {
   if (!content) return <BufferAnimation/>;
   return (
     <div className="mt-[10rem] md:mt-[20rem] lg:mt-[10rem]">
-      <h1 className="text-center font-bold text-[1.5rem] lg:text-[1.8rem] heading">Careers</h1>
-      <div className="w-[6rem] my-10 bg-black h-[0.2rem] text-center mx-auto"></div>
-      <h1 className="text-center font-bold text-[1.5rem] lg:text-[3.7rem]">Discover your place at Techistlab</h1>
-      <p className="text-center text-[1.2rem] w-full lg:w-[60%] mx-auto mt-10">
+      <h1 className="text-center font-bold text-[1.5rem] lg:text-[1.8rem] heading" data-aos="fade-up"
+        data-aos-duration="2000">Careers</h1>
+      <div className="w-[6rem] my-10 bg-black h-[0.2rem] text-center mx-auto" data-aos="fade-up"
+        data-aos-duration="2000"></div>
+      <h1 className="text-center font-bold text-[1.5rem] lg:text-[3.7rem]" data-aos="fade-up"
+        data-aos-duration="2000">Discover your place at Techistlab</h1>
+      <p className="text-center text-[1.2rem] w-full lg:w-[60%] mx-auto mt-10" data-aos="fade-up"
+        data-aos-duration="2000">
         Are you passionate about technology and innovation? Explore career opportunities with us and help shape the future of digital solutions.
       </p>
 
       {/* Career Sections */}
-      <div className="mt-16 grid gap-8 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 p-5">
+      <div className="mt-16 grid gap-8 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 p-5" data-aos="fade-up"
+        data-aos-duration="2000">
         {/* Job 1 */}
         <div className="border border-gray-300 shadow-lg p-6 rounded-lg hover:shadow-xl transition duration-300 cursor-pointer">
           <h2 className="text-xl font-semibold">{content.Job1}</h2>
@@ -79,7 +84,8 @@ const Careers = () => {
         </div>
 
         {/* Job 2 */}
-        <div className="border border-gray-300 shadow-lg p-6 rounded-lg hover:shadow-xl transition duration-300 cursor-pointer">
+        <div className="border border-gray-300 shadow-lg p-6 rounded-lg hover:shadow-xl transition duration-300 cursor-pointer" data-aos="fade-up"
+        data-aos-duration="2000">
           <h2 className="text-xl font-semibold">{content.Job2}</h2>
           <p className="text-gray-600 mt-2">Location: {content.Location2}</p>
           <p className="mt-4 text-gray-800">
@@ -88,7 +94,8 @@ const Careers = () => {
         </div>
 
         {/* Job 3 */}
-        <div className="border border-gray-300 shadow-lg p-6 rounded-lg hover:shadow-xl transition duration-300 cursor-pointer">
+        <div className="border border-gray-300 shadow-lg p-6 rounded-lg hover:shadow-xl transition duration-300 cursor-pointer" data-aos="fade-up"
+        data-aos-duration="2000">
           <h2 className="text-xl font-semibold">{content.Job3}</h2>
           <p className="text-gray-600 mt-2">Location: {content.Location3}</p>
           <p className="mt-4 text-gray-800">
