@@ -27,7 +27,7 @@ const Portfolio = () => {
        <div className='w-full lg:w-[45%] flex flex-col gap-5'  data-aos="fade-down"
         data-aos-duration="2000">
         <h1 className='text-center font-bold text-[2.5rem]'>Retail Revolution</h1>
-        <p className='text-[0.9rem] lg:text-[1.2rem] text-center'>See how we developed a mobile shopping app that increased a retail client's sales by 30% within six months. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium blanditiis nemo ab, sit cupiditate explicabo nihil facere expedita neque, nobis, atque tenetur cum? Quae, accusamus quo! Accusamus rem nam aperiam illo! Corporis necessitatibus beatae amet repudiandae unde, ratione voluptatem.</p>
+        <p className='text-[0.9rem] lg:text-[1.2rem] text-center'>See how we developed a mobile shopping app that increased a retail client's sales by 30% within six months.</p>
         </div>
 
       </div>

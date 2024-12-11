@@ -54,7 +54,7 @@ const Contact = () => {
               const email = e.target.email.value;
               const message = e.target.message.value;
 
-              const mailtoLink = `mailto:aditya.219301361@muj.manipal.edu?subject=Contact%20from%20${encodeURIComponent(
+              const mailtoLink = `mailto:ask@techistlab.co.uk?subject=Contact%20from%20${encodeURIComponent(
                 name
               )}&body=From:%20${encodeURIComponent(
                 email
@@ -131,8 +131,8 @@ const Contact = () => {
 
             <h3 className="text-2xl font-semibold mt-4 mb-2">Email</h3>
             <p>
-              <a href="mailto:info@springdale.edu" className="text-blue-500">
-                info@springdale.edu
+              <a href="mailto:ask@techistlab.co.uk" className="text-blue-500">
+              ask@techistlab.co.uk
               </a>
             </p>
           </div>

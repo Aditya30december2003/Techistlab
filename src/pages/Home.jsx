@@ -9,11 +9,12 @@ import Aos from 'aos'
 import 'aos/dist/aos.css'
 import { databases } from "../Appwrite/appwrite";
 import BufferAnimation from '../components/BufferAnimation'
+
 const fetchHomeContent = async () => {
   try {
     const response = await databases.listDocuments(
-      "67590c120021587afdf8", // Your database ID
-      "67590c32003b089065be"  // Your "home" collection ID
+      "67594afc0000cafabf62", // Your database ID
+      "67594b2b0006d71a548d"  // Your "home" collection ID
     );
     
     console.log("Raw Appwrite Response:", response);
@@ -89,11 +90,37 @@ repeat= {Infinity}/>
         
       </div>
       
-      <div className="mx-auto text-center w-[95%] lg:w-[45%] mt-28 lg:mt-20 flex items-center border p-2 rounded-[5rem]" data-aos="fade-up"
-        data-aos-duration="2000">
-        <input type="email" placeholder="email" className="border-none outline-none p-2 bg-transparent w-[70%]"/>
-        <button className="text-center mx-auto subcolor1 text-white p-3 w-[30%] rounded-[5rem] text-[1rem] font-bold">Hire Us</button>
-      </div>
+      <form 
+  onSubmit={(e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const name = "TechistLab Inquiry";
+    const message = "I am interested in hiring your services.";
+    const mailtoLink = `mailto:ask@techistlab.co.uk?subject=Contact%20from%20${encodeURIComponent(
+      name
+    )}&body=From:%20${encodeURIComponent(email)}%0A%0A${encodeURIComponent(message)}`;
+    window.location.href = mailtoLink;
+  }}
+  className="mx-auto text-center w-[95%] lg:w-[45%] mt-28 lg:mt-20 flex items-center border p-2 rounded-[5rem]"
+  data-aos="fade-up"
+  data-aos-duration="2000"
+>
+  <input 
+    type="email"
+    id="email"
+    name="email"
+    required  
+    placeholder="Email" 
+    className="border-none outline-none p-2 bg-transparent w-[70%]"
+  />
+  <button  
+    type="submit" 
+    className="text-center mx-auto subcolor1 text-white p-3 w-[30%] rounded-[5rem] text-[1rem] font-bold"
+  >
+    Hire Us
+  </button>
+</form>
+
       </div>
       
       <div className="py-7 mt-20">
