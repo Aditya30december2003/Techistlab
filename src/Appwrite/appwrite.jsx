@@ -10,7 +10,7 @@ client
 const databases = new Databases(client);
 
 // Example: fetching documents from a collection
-databases.listDocuments('your_collection_id')
+databases.listDocuments('67594b2b0006d71a548d')
   .then(response => {
     console.log('Documents:', response);
   })
