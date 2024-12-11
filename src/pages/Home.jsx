@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect , useState } from "react";
 import { FaReact } from "react-icons/fa";
 import { SiAndroidstudio } from "react-icons/si";
 import { FaFigma } from "react-icons/fa";
@@ -7,31 +7,89 @@ import { LuFileJson } from "react-icons/lu";
 import { TypeAnimation } from "react-type-animation";
 import Aos from 'aos'
 import 'aos/dist/aos.css'
+import { databases } from "../Appwrite/appwrite";
+import BufferAnimation from '../components/BufferAnimation'
+const fetchHomeContent = async () => {
+  try {
+    const response = await databases.listDocuments(
+      "67590c120021587afdf8", // Your database ID
+      "67590c32003b089065be"  // Your "home" collection ID
+    );
+    
+    console.log("Raw Appwrite Response:", response);
+    console.log("Documents:", response.documents);
+    console.log("Total documents:", response.documents.length);
+    
+    if (response.documents.length > 0) {
+      console.log("First document full details:", response.documents[0]);
+      console.log("taglineA value:", response.documents[0].taglineA);
+    }
+    
+    return response.documents;
+  } catch (error) {
+    console.error("Detailed Appwrite Fetch Error:", {
+      message: error.message,
+      code: error.code,
+      type: error.type
+    });
+    throw error;
+  }
+};
 const Home = () => {
+  const [content, setContent] = useState(null);
+  const [error, setError] = useState(null);
   useEffect(()=>{
+    const loadContent = async () => {
+      try {
+        const data = await fetchHomeContent();
+        console.log("Fetched data in component:", data);
+        
+        if (data && data.length > 0) {
+          console.log("Setting content:", data[0]);
+          setContent(data[0]);
+        } else {
+          console.warn("No documents found");
+          setError("No content available");
+        }
+      } catch (err) {
+        console.error("Component fetch error:", err);
+        setError(err.message);
+      }
+    };
+
+    loadContent();
     Aos.init({duration:2000});
   },[])
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  if (!content) return <BufferAnimation/>;
   return (
     <div className="px-4 pt-[10rem] md:mt-[10rem] lg:mt-[1rem]" id="home">
       <div className="flex flex-col gap-4">
-      {/* <p className="heading text-center text-[1.5rem] lg:text-[1.8rem] text-black font-bold">Techistlab</p>
-      <div className="w-[6rem] my-10 bg-black h-[0.2rem] text-center mx-auto"></div> */}
+      <p className="text-center text-[1.1rem] lg:text-[1.8rem] text-black font-bold" data-aos="fade-up"
+        data-aos-duration="2000" >{content.taglineA}</p>
+      <div className="w-[6rem] my-10 bg-black h-[0.2rem] text-center mx-auto"></div>
       <div className="text-[2.2rem] md:text-[5rem] lg:text-[3rem] text-center w-[95%] lg:w-[60%] mx-auto font-extrabold heading" data-aos="fade-up"
-        data-aos-duration="2000" >Building <span className="">Digital Experiences</span> That Drive <span  className="">Success</span></div>
+        data-aos-duration="2000" >
+          {content.headingA}
+        </div>
       <div className="bg-gradient-to-r font-bold text-[1rem] md:text-[2.5rem] lg:text-[1.3rem] mt-4 text-center w-[100%] lg:w-[80%] mx-auto">
       <TypeAnimation
 sequence={[
-"We craft custom web and mobile applications that help you connect with your audience, streamline operations, and scale with confidence.",
+  content.subheadingA,
 1000,
 ]}
 wrapper="span"
 speed={20}
 className="text-6x1 font-bold "
 repeat= {Infinity}/>
-        {/* We craft custom web and mobile applications that help you connect with your audience, streamline operations, and scale with confidence. */}
+        
       </div>
       
-      <div className="mx-auto text-center w-[95%] text-white lg:w-[45%] mt-28 lg:mt-20 flex items-center border p-2 rounded-[5rem]" data-aos="fade-up"
+      <div className="mx-auto text-center w-[95%] lg:w-[45%] mt-28 lg:mt-20 flex items-center border p-2 rounded-[5rem]" data-aos="fade-up"
         data-aos-duration="2000">
         <input type="email" placeholder="email" className="border-none outline-none p-2 bg-transparent w-[70%]"/>
         <button className="text-center mx-auto subcolor1 text-white p-3 w-[30%] rounded-[5rem] text-[1rem] font-bold">Hire Us</button>
@@ -42,7 +100,7 @@ repeat= {Infinity}/>
       <div className="mx-auto text-center font-bold text-[1.2rem] rounded-md lg:text-[1.2rem] bg-purple-200 p-2 text-gray-700/80" data-aos="fade-up"
         data-aos-duration="2000">
       <p className="w-[100%] lg:w-[70%] mx-auto" >
-        At Techistlab, we blend strategic thinking, meticulous design, and cutting-edge technology to develop solutions that empower businesses of all sizes. From user-friendly mobile apps to robust web platforms, our team delivers products that not only look great but perform flawlessly. Let us help you transform your vision into a digital reality.
+        {content.contentA}
         </p>
       </div>
       </div>
