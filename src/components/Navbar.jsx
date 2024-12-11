@@ -69,13 +69,11 @@ const Navbar = () => {
           <img  className="w-[45rem] lg:w-[25rem]" src={logo} alt="Logo" data-aos="fade-up" data-aos-duration="2000"/>
         </div>
         <div className="w-[60%] lg:w-[60%]  hidden lg:block ">
-          <ul className="flex  w-[100%]  mx-auto items-center gap-7 text-[1rem] md:text-[0.8rem] lg:text-[0.9rem] justify-between" data-aos="fade-up" data-aos-duration="2000">
+          <ul className="flex  w-[100%]  mx-auto items-center gap-7 text-[1rem] md:text-[0.8rem] lg:text-[1.1rem] justify-between" data-aos="fade-up" data-aos-duration="2000">
             <NavLink 
               to="/" 
               style={activeNavLinkStyle}
-              className="underline-animation hover:text-purple-400" 
-              data-aos="fade-up" 
-              data-aos-duration="2000"
+              className="underline-animation hover:text-purple-400"
             >
               Home
             </NavLink>
@@ -83,8 +81,6 @@ const Navbar = () => {
               to="/about" 
               style={activeNavLinkStyle}
               className="underline-animation hover:text-purple-400" 
-              data-aos="fade-up" 
-              data-aos-duration="2000"
             >
               About
             </NavLink>
@@ -92,8 +88,6 @@ const Navbar = () => {
               to="/blog" 
               style={activeNavLinkStyle}
               className="underline-animation hover:text-purple-400" 
-              data-aos="fade-up" 
-              data-aos-duration="2000"
             >
               Blog
             </NavLink>
@@ -101,8 +95,6 @@ const Navbar = () => {
               to="/careers" 
               style={activeNavLinkStyle}
               className="underline-animation hover:text-purple-400" 
-              data-aos="fade-up" 
-              data-aos-duration="2000"
             >
               Careers
             </NavLink>
@@ -110,8 +102,6 @@ const Navbar = () => {
               to="/contact" 
               style={activeNavLinkStyle}
               className="underline-animation hover:text-purple-400" 
-              data-aos="fade-up" 
-              data-aos-duration="2000"
             >
               Contact
             </NavLink>
@@ -119,8 +109,6 @@ const Navbar = () => {
               to="/portfolio" 
               style={activeNavLinkStyle}
               className="underline-animation hover:text-purple-400" 
-              data-aos="fade-up" 
-              data-aos-duration="2000"
             >
               Portfolio
             </NavLink>
@@ -128,8 +116,6 @@ const Navbar = () => {
               to="/services" 
               style={activeNavLinkStyle}
               className="underline-animation hover:text-purple-400" 
-              data-aos="fade-up" 
-              data-aos-duration="2000"
             >
               Services
             </NavLink>
@@ -137,8 +123,6 @@ const Navbar = () => {
               to="/team" 
               style={activeNavLinkStyle}
               className="underline-animation hover:text-purple-400" 
-              data-aos="fade-up" 
-              data-aos-duration="2000"
             >
               Teams
             </NavLink>
