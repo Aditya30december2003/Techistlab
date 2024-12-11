@@ -67,8 +67,9 @@ const Home = () => {
   }
 
   if (!content) return <BufferAnimation/>;
+
   return (
-    <div className="px-4 pt-[10rem] md:mt-[10rem] lg:mt-[1rem]" id="home">
+    <div className="px-4 pt-[10rem] md:mt-[10rem] lg:mt-[1rem] mb-32" id="home">
       <div className="flex flex-col gap-4">
       <p className="text-center text-[1.1rem] lg:text-[1.8rem] font-bold" data-aos="fade-up"
         data-aos-duration="2000" >{content.taglineA}</p>

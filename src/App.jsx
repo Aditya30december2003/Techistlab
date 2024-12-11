@@ -30,8 +30,8 @@ function App() {
       <Route path='/careers' element={<Careers/>}/>
       <Route path='/contact' element={<Contact/>}/>
      </Routes> 
-     <PageLoadAnimation> <Footer/></PageLoadAnimation>
      </ThemeProvider>
+     <PageLoadAnimation> <Footer/></PageLoadAnimation>
     </>
   )
 }
