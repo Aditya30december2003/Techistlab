@@ -1,6 +1,64 @@
+import { useEffect , useState } from "react";
 import { TypeAnimation } from "react-type-animation";
+import { databases } from "../Appwrite/appwrite";
+import BufferAnimation from '../components/BufferAnimation'
 
+const fetchContactContent = async () => {
+  try {
+    const response = await databases.listDocuments(
+      "67594afc0000cafabf62", // Your database ID
+      "67594bb9002ce04b70a3"  // Your "contact" collection ID
+    );
+    
+    console.log("Raw Appwrite Response:", response);
+    console.log("Documents:", response.documents);
+    console.log("Total documents:", response.documents.length);
+    
+    if (response.documents.length > 0) {
+      console.log("First document full details:", response.documents[0]);
+      console.log("heading value:", response.documents[0].heading);
+    }
+    
+    return response.documents;
+  } catch (error) {
+    console.error("Detailed Appwrite Fetch Error:", {
+      message: error.message,
+      code: error.code,
+      type: error.type
+    });
+    throw error;
+  }
+};
 const Contact = () => {
+  const [content, setContent] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(()=>{
+    const loadContent = async () => {
+      try {
+        const data = await fetchContactContent();
+        console.log("Fetched data in component:", data);
+        
+        if (data && data.length > 0) {
+          console.log("Setting content:", data[0]);
+          setContent(data[0]);
+        } else {
+          console.warn("No documents found");
+          setError("No content available");
+        }
+      } catch (err) {
+        console.error("Component fetch error:", err);
+        setError(err.message);
+      }
+    };
+
+    loadContent();
+  },[])
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+  if (!content) return <BufferAnimation/>;
   return (
     <div className="mt-[10rem] md:mt-[5rem] lg:mt-[10rem] overflow-x-hidden"> {/* Added overflow-x-hidden */}
       <h1
@@ -20,13 +78,13 @@ const Contact = () => {
         data-aos-duration="2000"
         className="text-center font-bold mt-10 text-[2.3rem] lg:text-[3rem] w-full lg:w-[70%] mx-auto"
       >
-        We’re Here to Help You Succeed
+       {content.heading}
       </h1>
 
       <p className="text-center text-[1.2rem] w-full lg:w-[60%] mx-auto mt-10">
         <TypeAnimation
           sequence={[
-            "Whether you have a clear project in mind or need guidance exploring digital opportunities, we’re ready to collaborate.",
+            content.subHeading,
             1000,
           ]}
           wrapper="span"
@@ -122,17 +180,16 @@ const Contact = () => {
           >
             <h3 className="text-2xl font-semibold mb-2">Address</h3>
             <p>
-              Springdale Public School, 123 Education Lane, Cityville, State,
-              ZIP Code
+              {content.Address}
             </p>
 
             <h3 className="text-2xl font-semibold mt-4 mb-2">Phone</h3>
-            <p>+1 (123) 456-7890</p>
+            <p>{content.phonenum}</p>
 
             <h3 className="text-2xl font-semibold mt-4 mb-2">Email</h3>
             <p>
               <a href="mailto:ask@techistlab.co.uk" className="text-blue-500">
-              ask@techistlab.co.uk
+              {content.email}
               </a>
             </p>
           </div>

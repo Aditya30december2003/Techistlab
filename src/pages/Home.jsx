@@ -36,8 +36,36 @@ const fetchHomeContent = async () => {
     throw error;
   }
 };
+
+const fetchHome2Content = async () => {
+  try {
+    const response = await databases.listDocuments(
+      "67594afc0000cafabf62", // Your database ID
+      "675a6f79000e2048804b"  // Your "home2" collection ID
+    );
+    
+    console.log("Raw Appwrite Response:", response);
+    console.log("Documents:", response.documents);
+    console.log("Total documents:", response.documents.length);
+    
+    if (response.documents.length > 0) {
+      console.log("First document full details:", response.documents[0]);
+      console.log("taglineA value:", response.documents[0].taglineA);
+    }
+    
+    return response.documents;
+  } catch (error) {
+    console.error("Detailed Appwrite Fetch Error:", {
+      message: error.message,
+      code: error.code,
+      type: error.type
+    });
+    throw error;
+  }
+};
 const Home = () => {
   const [content, setContent] = useState(null);
+  const [content2 , setContent2]=useState(null);
   const [error, setError] = useState(null);
   useEffect(()=>{
     const loadContent = async () => {
@@ -58,7 +86,26 @@ const Home = () => {
       }
     };
 
+    const loadContent2 = async () => {
+      try {
+        const data = await fetchHome2Content();
+        console.log("Fetched data in component:", data);
+        
+        if (data && data.length > 0) {
+          console.log("Setting content:", data[0]);
+          setContent2(data[0]);
+        } else {
+          console.warn("No documents found");
+          setError("No content available");
+        }
+      } catch (err) {
+        console.error("Component fetch error:", err);
+        setError(err.message);
+      }
+    };
+
     loadContent();
+    loadContent2();
     Aos.init({duration:2000});
   },[])
 
@@ -137,7 +184,7 @@ repeat= {Infinity}/>
         <h1 className="font-bold text-[1.3rem]" data-aos="fade-right"
         data-aos-duration="3000">Our Services</h1>
         <div className="text-[2rem] lg:text-[2.5rem] font-bold" data-aos="fade-right"
-        data-aos-duration="2000">What We’re Offering?</div>
+        data-aos-duration="2000">{content2.heading}</div>
 
         <div className="grid mt-7 gap-16">
 
@@ -146,22 +193,22 @@ repeat= {Infinity}/>
           <div data-aos="fade-right"
         data-aos-duration="3000" className="border-2 cursor-pointer p-6 flex flex-col gap-2 rounded-md shadow-[10px_10px_1px_1px_#D6B4FC] lg:hover:shadow-[10px_10px_1px_1px_#D6B4FC] hover:scale-105">
                 <p><FaReact size={70}/></p>
-                <h1 className="font-bold text-[2rem]">Custom Web Development</h1>
-                <p className="text-[1.1rem] md:text-[1.8rem] lg:text-[1.1rem]">Create scalable, secure, and high-performing websites tailored to your unique needs.</p>
+                <h1 className="font-bold text-[2rem]">{content2.Service1H}</h1>
+                <p className="text-[1.1rem] md:text-[1.8rem] lg:text-[1.1rem]">{content2.Service1C}</p>
             </div>
 
             <div data-aos="fade-right"
         data-aos-duration="4000" className="border-2 cursor-pointer p-6 flex flex-col gap-2 rounded-md shadow-[10px_10px_1px_1px_#D6B4FC]  lg:hover:shadow-[10px_10px_1px_1px_#D6B4FC] hover:scale-105">
                 <p><SiAndroidstudio size={70}/></p>
-                <h1 className="font-bold text-[2rem]">Mobile App Development</h1>
-                <p className="text-[1.1rem] md:text-[1.8rem] lg:text-[1.1rem]">Build engaging, intuitive, and future-ready applications for iOS and Android.</p>
+                <h1 className="font-bold text-[2rem]">{content2.Service2H}</h1>
+                <p className="text-[1.1rem] md:text-[1.8rem] lg:text-[1.1rem]">{content2.Service2C}</p>
             </div>
                 
             <div className="border-2 cursor-pointer p-6 flex flex-col gap-2 rounded-md shadow-[10px_10px_1px_1px_#D6B4FC]  lg:hover:shadow-[10px_10px_1px_1px_#D6B4FC] hover:scale-105" data-aos="fade-right"
         data-aos-duration="1500">
                 <p><FaFigma size={70}/></p>
-                <h1 className="font-bold text-[2rem]">UI/UX Design</h1>
-                <p className="text-[1.1rem] md:text-[1.8rem] lg:text-[1.1rem] mt-8">Design interfaces that captivate your audience and keep them coming back for more.</p>
+                <h1 className="font-bold text-[2rem]">{content2.Servie3H}</h1>
+                <p className="text-[1.1rem] md:text-[1.8rem] lg:text-[1.1rem] mt-8">{content2.Service3C}</p>
             </div>
           </div>
             
@@ -169,15 +216,15 @@ repeat= {Infinity}/>
             <div className="border-2 cursor-pointer p-6 flex flex-col gap-2 rounded-md shadow-[10px_10px_1px_1px_#D6B4FC]  lg:hover:shadow-[10px_10px_1px_1px_#D6B4FC] hover:scale-105" data-aos="fade-right"
         data-aos-duration="1500">
                 <p><GiShoppingCart size={70}/></p>
-                <h1 className="font-bold text-[2rem]">E-commerce Solutions</h1>
-                <p className="text-[1.1rem] md:text-[1.8rem] lg:text-[1.1rem] mt-14">Launch or enhance your online store with seamless checkout and integrated payment systems.</p>
+                <h1 className="font-bold text-[2rem]">{content2.Service4H}</h1>
+                <p className="text-[1.1rem] md:text-[1.8rem] lg:text-[1.1rem] mt-14">{content2.Service4C}</p>
             </div>
 
             <div className="border-2 cursor-pointer p-6 flex flex-col gap-2 rounded-md shadow-[10px_10px_1px_1px_#D6B4FC]  lg:hover:shadow-[10px_10px_1px_1px_#D6B4FC] hover:scale-105" data-aos="fade-right"
         data-aos-duration="1500">
              <p><LuFileJson size={70}/></p>
-             <h1 className="font-bold text-[2rem]">API & Integration Services</h1>
-             <p className="text-[1.1rem] md:text-[1.8rem] lg:text-[1.1rem]">Connect with third-party tools and platforms to enhance your product’s capabilities.</p>
+             <h1 className="font-bold text-[2rem]">{content2.Service5H}</h1>
+             <p className="text-[1.1rem] md:text-[1.8rem] lg:text-[1.1rem]">{content2.Service5C}</p>
             </div>
 
           </div>
