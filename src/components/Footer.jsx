@@ -99,10 +99,6 @@ const Footer = () => {
       <div className="flex flex-col lg:flex-row items-center gap-7 text-[0.85rem] mt-5 justify-between">
         <div className="flex items-center gap-3 text-[1.1rem] mx-auto">
           <p>© 2024 Techistlab</p>
-          <p>.</p>
-          <p>Privacy</p>
-          <p>.</p>
-          <p>Terms</p>
         </div>
       </div>
     </div>
