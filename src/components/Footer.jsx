@@ -38,13 +38,13 @@ const Footer = () => {
           </button>
         </form>
       </div>
-  <div className="flex flex-col lg:flex-row gap-[1rem] lg:gap-[6rem] items-center">
+  <div className="flex flex-col md:flex-row gap-[1rem] lg:gap-[6rem] items-center">
   <div className="flex justify-center items-center p-14">
-  <div className="bg-gray-400 rounded-full w-[15rem] h-[15rem] lg:w-[12rem] lg:h-[12rem] flex-col text-center justify-center items-center">
+  <div className="bg-gray-400 rounded-full w-[10rem] h-[10rem] lg:w-[12rem] lg:h-[12rem] flex-col text-center justify-center items-center">
     <img 
       src="https://techistlab.co.uk/assets/logo-D8JJhk6e.png" 
       alt="Logo" 
-      className="w-48 h-48 object-contain mx-auto"
+      className="w-32 h-32 lg:w-48 lg:h-48 object-contain mx-auto"
     />
   </div>
 </div>
