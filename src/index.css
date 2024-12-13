@@ -47,6 +47,10 @@ html, body {
   background-color: var(--about-bg-color);
 }
 
+.patti{
+  background-color: var(--heading-color);
+}
+
 .testimonials {
   background-color: var(--testimonial-bg-color);
 }
