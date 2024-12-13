@@ -85,7 +85,7 @@ const Home = () => {
         >
           {content.taglineA}
         </p>
-        <div className="w-[6rem] my-5 bg-white h-[0.2rem] text-center mx-auto"></div>
+        <div className="w-[6rem] my-5 patti h-[0.2rem] text-center mx-auto"></div>
         <div
           className="text-[2.2rem] md:text-[5rem] lg:text-[3rem] text-center w-[95%] lg:w-[60%] mx-auto font-extrabold heading"
           data-aos="fade-up"

@@ -72,7 +72,7 @@ const Footer = () => {
         </div>
         <div>
         <h1 className="font-bold text-[1.3rem]">Email</h1>
-        <Link className="text-[1rem] font-light">email@gmail.com</Link>
+        <Link className="text-[1rem] font-light">ask@techistlab.co.uk</Link>
         </div>
         </div>
         <div className='flex flex-col gap-10'>
