@@ -93,7 +93,7 @@ const PageLoadAnimation = ({ children }) => {
           {/* Background Video */}
           <video
             className="absolute inset-0 w-full h-full object-cover"
-            src={content.OpeningVideo}
+            src={videoBackground}
             autoPlay
             loop
             muted
