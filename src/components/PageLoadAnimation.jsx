@@ -69,7 +69,7 @@ const PageLoadAnimation = ({ children }) => {
     if (error) {
       return <div>Error: {error}</div>;
     }
-    if (!content) return <BufferAnimation/>;
+    if (!content || !videoBackground) return <BufferAnimation/>;
 
   return (
     <AnimatePresence>
