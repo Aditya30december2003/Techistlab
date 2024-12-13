@@ -97,7 +97,7 @@ const Footer = () => {
       </div>
       <div className="w-[80%] mx-auto mt-10 bg-black h-[0.03rem]"></div>
       <div className="flex flex-col lg:flex-row items-center gap-7 text-[0.85rem] mt-5 justify-between">
-        <div className="flex items-center gap-3 text-[1.5rem] mx-auto">
+        <div className="flex items-center gap-3 text-[1.1rem] mx-auto">
           <p>© 2024 Techistlab</p>
           <p>.</p>
           <p>Privacy</p>
