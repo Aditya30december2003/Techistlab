@@ -28,31 +28,77 @@ const fetchAboutContent = async () => {
     throw error;
   }
 };
+
+const fetchAbout2Content = async () => {
+  try {
+    const response = await databases.listDocuments(
+      "67594afc0000cafabf62", // Your database ID
+      "675b1b6300122069be5e"  // Your "about"2 collection ID
+    );
+    
+    console.log("Raw Appwrite Response:", response);
+    console.log("Documents:", response.documents);
+    console.log("Total documents:", response.documents.length);
+    
+    if (response.documents.length > 0) {
+      console.log("First document full details:", response.documents[0]);
+      console.log("DiscoveryContent value:", response.documents[0].DiscoveryContent);
+    }
+    
+    return response.documents;
+  } catch (error) {
+    console.error("Detailed Appwrite Fetch Error:", {
+      message: error.message,
+      code: error.code,
+      type: error.type
+    });
+    throw error;
+  }
+};
 const About = () => {
   const [content, setContent] = useState(null);
-  const [error, setError] = useState(null);
-
-  useEffect(()=>{
-    const loadContent = async () => {
-      try {
-        const data = await fetchAboutContent();
-        console.log("Fetched data in component:", data);
-        
-        if (data && data.length > 0) {
-          console.log("Setting content:", data[0]);
-          setContent(data[0]);
-        } else {
-          console.warn("No documents found");
-          setError("No content available");
+    const [content2 , setContent2]=useState(null);
+    const [error, setError] = useState(null);
+    useEffect(()=>{
+      const loadContent = async () => {
+        try {
+          const data = await fetchAboutContent();
+          console.log("Fetched data in component:", data);
+          
+          if (data && data.length > 0) {
+            console.log("Setting content:", data[0]);
+            setContent(data[0]);
+          } else {
+            console.warn("No documents found");
+            setError("No content available");
+          }
+        } catch (err) {
+          console.error("Component fetch error:", err);
+          setError(err.message);
         }
-      } catch (err) {
-        console.error("Component fetch error:", err);
-        setError(err.message);
-      }
-    };
-
-    loadContent();
-  },[])
+      };
+  
+      const loadContent2 = async () => {
+        try {
+          const data = await fetchAbout2Content();
+          console.log("Fetched data in component:", data);
+          
+          if (data && data.length > 0) {
+            console.log("Setting content:", data[0]);
+            setContent2(data[0]);
+          } else {
+            console.warn("No documents found");
+            setError("No content available");
+          }
+        } catch (err) {
+          console.error("Component fetch error:", err);
+          setError(err.message);
+        }
+      };
+  
+      loadContent();
+      loadContent2();
+    },[])
 
   if (error) {
     return <div>Error: {error}</div>;
@@ -72,7 +118,7 @@ const About = () => {
       </div>
 
       <div data-aos="fade-down"
-        data-aos-duration="3000"><img className="lg:py-15 lg:px-20 p-4 w-[100rem] rounded-md" src="https://images.ctfassets.net/kftzwdyauwt9/32cmTSUIF5POX5FMuoHJwO/be8b42b8016957ca28e07274f05f1d3d/stangel-2022-0527.webp?w=1920&q=90&fm=webp" alt="" /></div>
+        data-aos-duration="3000"><img className="lg:py-15 lg:px-20 p-4 w-[100rem] rounded-md" src={content2.img1} alt="" /></div>
 
       <div className="py-[3.7rem] px-[2rem]">
         <h1 className="font-bold text-[2.4rem]" data-aos="fade-down"
@@ -90,7 +136,7 @@ const About = () => {
         </div>
 
         <div  data-aos="fade-down"
-        data-aos-duration="2000"><img className="lg:py-15 lg:px-20 p-4 mt-24 w-[100rem]" src="https://images.ctfassets.net/kftzwdyauwt9/7fnM7WwfGlji0mE0t8DefO/cc161016b8d84fd6d789b06c92416544/stangel-openAI-offices-2022-1714.webp?w=1920&q=90&fm=webp" alt="" /></div>
+        data-aos-duration="2000"><img className="lg:py-15 lg:px-20 p-4 mt-24 w-[100rem]" src={content2.img2} alt="" /></div>
 
         <div data-aos="fade-down"
         data-aos-duration="2000" className="about flex flex-col lg:flex-row justify-between items-center mt-[3rem] mx-auto shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] rounded-[1.3rem] w-full lg:w-[90%]">
@@ -104,7 +150,7 @@ const About = () => {
         </div>
 
         <div data-aos="fade-down"
-        data-aos-duration="2000"><img className="lg:py-15 lg:px-20 p-4 mt-24 w-[100rem]" src="https://images.ctfassets.net/kftzwdyauwt9/2ROfAZ7SlUiikj2Hp98LS0/7e71fd438017ce9cebe46fdce580bb04/stangel-2022-1534.webp?w=1920&q=90&fm=webp" alt="" /></div>
+        data-aos-duration="2000"><img className="lg:py-15 lg:px-20 p-4 mt-24 w-[100rem]" src={content2.img3} alt="" /></div>
 
         <div data-aos="fade-down"
         data-aos-duration="2000" className="about flex flex-col lg:flex-row justify-between items-center mt-[3rem] mx-auto shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] rounded-[1.3rem] w-full lg:w-[90%]">
@@ -118,7 +164,7 @@ const About = () => {
         </div>
   
         <div data-aos="fade-down"
-        data-aos-duration="2000"><img className="lg:py-15 lg:px-20 p-4 mt-24 w-[100rem]" src="https://images.pexels.com/photos/7652180/pexels-photo-7652180.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" /></div>
+        data-aos-duration="2000"><img className="lg:py-15 lg:px-20 p-4 mt-24 w-[100rem]" src={content2.img4} alt="" /></div>
 
 
         <div data-aos="fade-down"
@@ -133,7 +179,7 @@ const About = () => {
         </div>
 
         <div data-aos="fade-down"
-        data-aos-duration="2000"><img className="lg:py-15 lg:px-20 p-4 mt-24 w-[100rem]" src="https://images.pexels.com/photos/5816286/pexels-photo-5816286.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" /></div>
+        data-aos-duration="2000"><img className="lg:py-15 lg:px-20 p-4 mt-24 w-[100rem]" src={content2.img5} alt="" /></div>
 
         <div data-aos="fade-down"
         data-aos-duration="2000" className="about flex flex-col lg:flex-row justify-between items-center mt-[3rem]  shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] rounded-[1.3rem] w-full lg:w-[90%] mx-auto">

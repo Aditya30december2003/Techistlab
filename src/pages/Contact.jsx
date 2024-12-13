@@ -85,10 +85,11 @@ const Contact = () => {
         <TypeAnimation
           sequence={[
             content.subHeading,
-            1000,
+            0,
+            "Rely on our expert support throughout your digital transformation journey.",
           ]}
           wrapper="span"
-          speed={20}
+          speed={30}
           className="text-6x1 font-bold"
           repeat={Infinity}
         />
@@ -172,41 +173,33 @@ const Contact = () => {
         </div>
 
         {/* Contact Info and Google Map */}
-        <div className="google-maps flex flex-col lg:flex-row mt-12 w-full">
+        <div className="google-maps flex flex-col lg:flex-row gap-[2rem] w-full mt-20">
           <div
-            className="contact-info mb-6 w-full lg:w-[50%]"
+            className="contact-info mb-6 w-full lg:w-[100%]  flex-col text-left"
             data-aos="fade-right"
             data-aos-duration="2000"
+            
           >
-            <h3 className="text-2xl font-semibold mb-2">Address</h3>
-            <p>
-              {content.Address}
+            <div className="p-3 rounded-md shadow-[5px_5px_0px_0px_rgba(109,40,217)] border-2">
+            <h3 className="text-2xl font-semibold mb-2 text-[2rem]">Address</h3>
+            <p className="text-[2.4rem]">
+            167-169 Great Portland Street, 5th Floor, London, England, W1W 5PF
             </p>
+            </div>
+            <div className="p-3 rounded-md shadow-[5px_5px_0px_0px_rgba(109,40,217)] mt-20 border">
+            <h3 className="text-2xl font-semibold mt-4 mb-2 text[2rem]">Call us on:</h3>
+            <p className="text-[2.4rem]">+44(0)20 3723 6703</p>
+            </div>
+            <div className="p-3 rounded-md shadow-[5px_5px_0px_0px_rgba(109,40,217)] mt-20 border">
 
-            <h3 className="text-2xl font-semibold mt-4 mb-2">Phone</h3>
-            <p>{content.phonenum}</p>
-
-            <h3 className="text-2xl font-semibold mt-4 mb-2">Email</h3>
-            <p>
+            <h3 className="text-2xl font-semibold mt-4 mb-2 text-[2rem]">Email us on:</h3>
+            <p className="text-[2.4rem]">
               <a href="mailto:ask@techistlab.co.uk" className="text-blue-500">
               {content.email}
               </a>
             </p>
-          </div>
 
-          <div
-            className="w-full lg:w-[50%]"
-            data-aos="fade-left"
-            data-aos-duration="2000"
-          >
-            <h3 className="text-2xl font-semibold mb-4">Find Us on Google Maps</h3>
-            <iframe
-              title="Google Maps"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.8621622416514!2d-121.98908608469046!3d37.3590869798428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fcaf3fdf6c2df%3A0x540044f538b264f2!2s123%20Education%20Lane%2C%20Cityville%2C%20State%2C%20ZIP%20Code!5e0!3m2!1sen!2sus!4v1625845697987!5m2!1sen!2sus"
-              className="w-full h-64 border-0"
-              allowFullScreen=""
-              loading="lazy"
-            ></iframe>
+            </div>
           </div>
         </div>
       </div>

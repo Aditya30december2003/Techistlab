@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const BufferAnimation = ({ isLoading = false }) => {
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-purple-600">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black">
       <div className="flex space-x-2">
         <motion.div
           className="w-4 h-4 bg-white rounded-full"

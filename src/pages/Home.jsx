@@ -1,239 +1,218 @@
-import { useEffect , useState } from "react";
+import { useEffect, useState } from "react";
 import { FaReact } from "react-icons/fa";
 import { SiAndroidstudio } from "react-icons/si";
 import { FaFigma } from "react-icons/fa";
 import { GiShoppingCart } from "react-icons/gi";
 import { LuFileJson } from "react-icons/lu";
 import { TypeAnimation } from "react-type-animation";
-import Aos from 'aos'
-import 'aos/dist/aos.css'
+import Aos from "aos";
+import "aos/dist/aos.css";
 import { databases } from "../Appwrite/appwrite";
-import BufferAnimation from '../components/BufferAnimation'
+import BufferAnimation from "../components/BufferAnimation";
 
-const fetchHomeContent = async () => {
+const fetchContent = async (collectionId) => {
   try {
     const response = await databases.listDocuments(
       "67594afc0000cafabf62", // Your database ID
-      "67594b2b0006d71a548d"  // Your "home" collection ID
+      collectionId
     );
-    
-    console.log("Raw Appwrite Response:", response);
-    console.log("Documents:", response.documents);
-    console.log("Total documents:", response.documents.length);
-    
-    if (response.documents.length > 0) {
-      console.log("First document full details:", response.documents[0]);
-      console.log("taglineA value:", response.documents[0].taglineA);
+
+    if (response.documents.length === 0) {
+      throw new Error("No content available");
     }
-    
-    return response.documents;
+
+    return response.documents[0];
   } catch (error) {
-    console.error("Detailed Appwrite Fetch Error:", {
-      message: error.message,
-      code: error.code,
-      type: error.type
-    });
+    console.error("Appwrite fetch error:", error);
     throw error;
   }
 };
 
-const fetchHome2Content = async () => {
-  try {
-    const response = await databases.listDocuments(
-      "67594afc0000cafabf62", // Your database ID
-      "675a6f79000e2048804b"  // Your "home2" collection ID
-    );
-    
-    console.log("Raw Appwrite Response:", response);
-    console.log("Documents:", response.documents);
-    console.log("Total documents:", response.documents.length);
-    
-    if (response.documents.length > 0) {
-      console.log("First document full details:", response.documents[0]);
-      console.log("taglineA value:", response.documents[0].taglineA);
-    }
-    
-    return response.documents;
-  } catch (error) {
-    console.error("Detailed Appwrite Fetch Error:", {
-      message: error.message,
-      code: error.code,
-      type: error.type
-    });
-    throw error;
-  }
-};
 const Home = () => {
-  const [content, setContent] = useState(null);
-  const [content2 , setContent2]=useState(null);
+  const [content, setContent] = useState({});
+  const [content2, setContent2] = useState({});
   const [error, setError] = useState(null);
-  useEffect(()=>{
+
+  useEffect(() => {
     const loadContent = async () => {
       try {
-        const data = await fetchHomeContent();
-        console.log("Fetched data in component:", data);
-        
-        if (data && data.length > 0) {
-          console.log("Setting content:", data[0]);
-          setContent(data[0]);
-        } else {
-          console.warn("No documents found");
-          setError("No content available");
-        }
+        const data1 = await fetchContent("67594b2b0006d71a548d"); // "home" collection ID
+        const data2 = await fetchContent("675a6f79000e2048804b"); // "home2" collection ID
+        setContent(data1);
+        setContent2(data2);
       } catch (err) {
-        console.error("Component fetch error:", err);
-        setError(err.message);
-      }
-    };
-
-    const loadContent2 = async () => {
-      try {
-        const data = await fetchHome2Content();
-        console.log("Fetched data in component:", data);
-        
-        if (data && data.length > 0) {
-          console.log("Setting content:", data[0]);
-          setContent2(data[0]);
-        } else {
-          console.warn("No documents found");
-          setError("No content available");
-        }
-      } catch (err) {
-        console.error("Component fetch error:", err);
         setError(err.message);
       }
     };
 
     loadContent();
-    loadContent2();
-    Aos.init({duration:2000});
-  },[])
+    Aos.init({ duration: 2000 });
+
+    // Cleanup function if needed, e.g., for cancelling the async call
+    return () => {
+      // Any cleanup needed here
+    };
+  }, []);
 
   if (error) {
     return <div>Error: {error}</div>;
   }
 
-  if (!content) return <BufferAnimation/>;
+  if (!content.headingA) return <BufferAnimation />;
 
   return (
     <div className="px-4 pt-[10rem] md:mt-[10rem] lg:mt-[1rem] mb-32" id="home">
       <div className="flex flex-col gap-4">
-      <p className="text-center text-[1.1rem] lg:text-[1.8rem] font-bold" data-aos="fade-up"
-        data-aos-duration="2000" >{content.taglineA}</p>
-      <div className="w-[6rem] my-10 bg-black h-[0.2rem] text-center mx-auto"></div>
-      <div className="text-[2.2rem] md:text-[5rem] lg:text-[3rem] text-center w-[95%] lg:w-[60%] mx-auto font-extrabold heading" data-aos="fade-up"
-        data-aos-duration="2000" >
+        <p
+          className="text-center text-[1.1rem] lg:text-[1.8rem] font-bold"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
+          {content.taglineA}
+        </p>
+        <div className="w-[6rem] my-10 bg-black h-[0.2rem] text-center mx-auto"></div>
+        <div
+          className="text-[2.2rem] md:text-[5rem] lg:text-[3rem] text-center w-[95%] lg:w-[60%] mx-auto font-extrabold heading"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
           {content.headingA}
         </div>
-      <div className="bg-gradient-to-r font-bold text-[1rem] md:text-[2.5rem] lg:text-[1.3rem] mt-4 text-center w-[100%] lg:w-[80%] mx-auto">
-      <TypeAnimation
-sequence={[
-  content.subheadingA,
-1000,
-]}
-wrapper="span"
-speed={20}
-className="text-6x1 font-bold "
-repeat= {Infinity}/>
-        
-      </div>
-      
-      <form 
-  onSubmit={(e) => {
-    e.preventDefault();
-    const email = e.target.email.value;
-    const name = "TechistLab Inquiry";
-    const message = "I am interested in hiring your services.";
-    const mailtoLink = `mailto:ask@techistlab.co.uk?subject=Contact%20from%20${encodeURIComponent(
-      name
-    )}&body=From:%20${encodeURIComponent(email)}%0A%0A${encodeURIComponent(message)}`;
-    window.location.href = mailtoLink;
-  }}
-  className="mx-auto text-center w-[95%] lg:w-[45%] mt-28 lg:mt-20 flex items-center border p-2 rounded-[5rem]"
-  data-aos="fade-up"
-  data-aos-duration="2000"
->
-  <input 
-    type="email"
-    id="email"
-    name="email"
-    required  
-    placeholder="Email" 
-    className="border-none outline-none p-2 bg-transparent w-[70%]"
-  />
-  <button  
-    type="submit" 
-    className="text-center mx-auto subcolor1 text-white p-3 w-[30%] rounded-[5rem] text-[1rem] font-bold"
-  >
-    Hire Us
-  </button>
-</form>
+        <div className="bg-gradient-to-r font-bold text-[1rem] md:text-[2.5rem] lg:text-[1.3rem] mt-4 text-center w-[100%] lg:w-[80%] mx-auto">
+        <TypeAnimation
+  sequence={[
+    content.subheadingA, // First text
+    0,                   // No pause
+    content.subheadingB, // Second text (if any)
+    0,                   // No pause
+    content.subheadingC, // Third text (if any)
+    0,
+    content.subheadingD,
+    0,
+    content.subheadingE,
+  ]}
+  wrapper="span"
+  speed={50}
+  className="text-6x1 font-bold"
+  repeat={Infinity}
+/>
 
+        </div>
+
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            const email = e.target.email.value;
+            const name = "TechistLab Inquiry";
+            const message = "I am interested in hiring your services.";
+            const mailtoLink = `mailto:ask@techistlab.co.uk?subject=Contact%20from%20${encodeURIComponent(
+              name
+            )}&body=From:%20${encodeURIComponent(email)}%0A%0A${encodeURIComponent(
+              message
+            )}`;
+            window.location.href = mailtoLink;
+          }}
+          className="mx-auto text-center w-[95%] lg:w-[45%] mt-28 lg:mt-20 flex items-center border p-2 rounded-[5rem]"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="Email"
+            className="border-none outline-none p-2 bg-transparent w-[70%]"
+          />
+          <button
+            type="submit"
+            className="text-center mx-auto subcolor1 text-white p-3 w-[30%] rounded-[5rem] text-[1rem] font-bold"
+          >
+            Let's talk tech
+          </button>
+        </form>
       </div>
-      
+
       <div className="py-7 mt-20">
-      <div className="mx-auto text-center font-bold text-[1.2rem] rounded-md lg:text-[1.2rem] bg-purple-200 p-2 text-gray-700/80" data-aos="fade-up"
-        data-aos-duration="2000">
-      <p className="w-[100%] lg:w-[70%] mx-auto" >
-        {content.contentA}
-        </p>
-      </div>
+        <div
+          className="mx-auto text-center font-bold text-[1.2rem] rounded-md lg:text-[1.2rem] bg-purple-200 p-2 text-gray-700/80"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
+          <p className="w-[100%] lg:w-[70%] mx-auto text-left">
+            <div className="text-[2.5rem]">At Techistlab</div>
+            <ol className="flex flex-col gap-10 mt-4 mb-6">
+              <li  data-aos="fade-down"
+          data-aos-duration="2000" className="bg-black cursor-pointer text-white p-3 rounded-md shadow-[5px_5px_0px_0px_rgba(109,40,217)]">{content.contentA}</li>
+              <li  data-aos="fade-down"
+          data-aos-duration="2000" className="bg-black text-white p-3 rounded-md shadow-[5px_5px_0px_0px_rgba(109,40,217)]">{content.contentB}</li>
+              <li  data-aos="fade-down"
+          data-aos-duration="2000" className="bg-black text-white p-3 rounded-md shadow-[5px_5px_0px_0px_rgba(109,40,217)]">{content.contentC}</li>
+            </ol>
+          </p>
+        </div>
       </div>
 
       <div className="mt-7 px-7 py-2">
-        <h1 className="font-bold text-[1.3rem]" data-aos="fade-right"
-        data-aos-duration="3000">Our Services</h1>
-        <div className="text-[2rem] lg:text-[2.5rem] font-bold" data-aos="fade-right"
-        data-aos-duration="2000">{content2.heading}</div>
+        <h1
+          className="font-bold text-[1.3rem]"
+          data-aos="fade-right"
+          data-aos-duration="3000"
+        >
+          Our Services
+        </h1>
+        <div
+          className="text-[2rem] lg:text-[2.5rem] font-bold"
+          data-aos="fade-right"
+          data-aos-duration="2000"
+        >
+          {content2.heading}
+        </div>
 
         <div className="grid mt-7 gap-16">
-
           <div className="flex flex-col lg:grid lg:grid-cols-3 gap-16">
-
-          <div data-aos="fade-right"
-        data-aos-duration="3000" className="border-2 cursor-pointer p-6 flex flex-col gap-2 rounded-md shadow-[10px_10px_1px_1px_#D6B4FC] lg:hover:shadow-[10px_10px_1px_1px_#D6B4FC] hover:scale-105">
-                <p><FaReact size={70}/></p>
-                <h1 className="font-bold text-[2rem]">{content2.Service1H}</h1>
-                <p className="text-[1.1rem] md:text-[1.8rem] lg:text-[1.1rem]">{content2.Service1C}</p>
-            </div>
-
-            <div data-aos="fade-right"
-        data-aos-duration="4000" className="border-2 cursor-pointer p-6 flex flex-col gap-2 rounded-md shadow-[10px_10px_1px_1px_#D6B4FC]  lg:hover:shadow-[10px_10px_1px_1px_#D6B4FC] hover:scale-105">
-                <p><SiAndroidstudio size={70}/></p>
-                <h1 className="font-bold text-[2rem]">{content2.Service2H}</h1>
-                <p className="text-[1.1rem] md:text-[1.8rem] lg:text-[1.1rem]">{content2.Service2C}</p>
-            </div>
-                
-            <div className="border-2 cursor-pointer p-6 flex flex-col gap-2 rounded-md shadow-[10px_10px_1px_1px_#D6B4FC]  lg:hover:shadow-[10px_10px_1px_1px_#D6B4FC] hover:scale-105" data-aos="fade-right"
-        data-aos-duration="1500">
-                <p><FaFigma size={70}/></p>
-                <h1 className="font-bold text-[2rem]">{content2.Servie3H}</h1>
-                <p className="text-[1.1rem] md:text-[1.8rem] lg:text-[1.1rem] mt-8">{content2.Service3C}</p>
-            </div>
+            {[
+              { icon: <FaReact size={70} />, title: content2.Service1H, description: content2.Service1C },
+              { icon: <SiAndroidstudio size={70} />, title: content2.Service2H, description: content2.Service2C },
+              { icon: <FaFigma size={70} />, title: content2.Servie3H, description: content2.Service3C },
+            ].map((service, index) => (
+              <div
+                key={index}
+                data-aos="fade-right"
+                data-aos-duration={`${1500 + index * 1000}`}
+                className="border-2 cursor-pointer p-6 flex flex-col gap-2 rounded-md shadow-[10px_10px_1px_1px_#D6B4FC] lg:hover:shadow-[10px_10px_1px_1px_#D6B4FC] hover:scale-105"
+              >
+                <p>{service.icon}</p>
+                <h1 className="font-bold text-[2rem]">{service.title}</h1>
+                <p className="text-[1.1rem] md:text-[1.8rem] lg:text-[1.1rem]">{service.description}</p>
+              </div>
+            ))}
           </div>
-            
+
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10 w-[100%] lg:w-[70%] mx-auto">
-            <div className="border-2 cursor-pointer p-6 flex flex-col gap-2 rounded-md shadow-[10px_10px_1px_1px_#D6B4FC]  lg:hover:shadow-[10px_10px_1px_1px_#D6B4FC] hover:scale-105" data-aos="fade-right"
-        data-aos-duration="1500">
-                <p><GiShoppingCart size={70}/></p>
-                <h1 className="font-bold text-[2rem]">{content2.Service4H}</h1>
-                <p className="text-[1.1rem] md:text-[1.8rem] lg:text-[1.1rem] mt-14">{content2.Service4C}</p>
-            </div>
-
-            <div className="border-2 cursor-pointer p-6 flex flex-col gap-2 rounded-md shadow-[10px_10px_1px_1px_#D6B4FC]  lg:hover:shadow-[10px_10px_1px_1px_#D6B4FC] hover:scale-105" data-aos="fade-right"
-        data-aos-duration="1500">
-             <p><LuFileJson size={70}/></p>
-             <h1 className="font-bold text-[2rem]">{content2.Service5H}</h1>
-             <p className="text-[1.1rem] md:text-[1.8rem] lg:text-[1.1rem]">{content2.Service5C}</p>
-            </div>
-
+            {[
+              { icon: <GiShoppingCart size={70} />, title: content2.Service4H, description: content2.Service4C },
+              { icon: <LuFileJson size={70} />, title: content2.Service5H, description: content2.Service5C },
+            ].map((service, index) => (
+              <div
+                key={index}
+                className="border-2 cursor-pointer p-6 flex flex-col gap-2 rounded-md shadow-[10px_10px_1px_1px_#D6B4FC] lg:hover:shadow-[10px_10px_1px_1px_#D6B4FC] hover:scale-105"
+                data-aos="fade-right"
+                data-aos-duration={`${1500 + index * 1000}`}
+              >
+                <p>{service.icon}</p>
+                <h1 className="font-bold text-[2rem]">{service.title}</h1>
+                <p className="text-[1.1rem] md:text-[1.8rem] lg:text-[1.1rem]">{service.description}</p>
+              </div>
+            ))}
           </div>
-
-          </div>
-        
+        </div>
       </div>
+      <div className="mt-20 text-center text-[1.7rem] w-[80%] md:w-[30%] p-2 mx-auto border-2 font-bold rounded-md shadow-[10px_10px_1px_1px_#D6B4FC] lg:hover:shadow-[10px_10px_1px_1px_#D6B4FC] hover:scale-95 cursor-pointer "  data-aos="fade-right"
+          data-aos-duration="2000">And Many More....</div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
+

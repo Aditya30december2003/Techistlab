@@ -7,9 +7,10 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider = ({ children }) => {
-  // Check for the saved theme in localStorage during initialization
+  // Check for the saved theme in localStorage during initialization,
+  // default to dark mode if no theme is saved
   const storedTheme = localStorage.getItem("theme");
-  const [isDarkMode, setIsDarkMode] = useState(storedTheme === "dark");
+  const [isDarkMode, setIsDarkMode] = useState(storedTheme ? storedTheme === "dark" : true); // default to true (dark mode)
 
   const toggleTheme = () => {
     setIsDarkMode((prevMode) => !prevMode);
@@ -20,7 +21,7 @@ export const ThemeProvider = ({ children }) => {
   useEffect(() => {
     // Apply the theme to the document element
     document.documentElement.setAttribute("data-theme", theme);
-    
+
     // Save the theme to localStorage
     localStorage.setItem("theme", theme);
   }, [isDarkMode, theme]);

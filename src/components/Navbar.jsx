@@ -132,7 +132,7 @@ const Navbar = () => {
               onClick={toggleMode}
               className="cursor-pointer border-2 hidden lg:block   p-4 rounded-[100%]" data-aos="fade-up" data-aos-duration="2000"
             >
-              {!icon ? <GoSun size={25}/> : <FaMoon size={25}/>}
+              {icon ? <GoSun size={25}/> : <FaMoon size={25}/>}
             </div>
         {/* Hamburger Icon */}
        

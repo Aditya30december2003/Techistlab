@@ -47,7 +47,7 @@ const Services = ({ children: slides, autoSlide = false, autoSlideInterval = 300
   }, [autoSlide, autoSlideInterval]);
 
   return (
-    <div className="mt-[10rem] md:mt-[15rem] lg:mt-[10rem]" data-aos="fade-up" data-aos-duration="2000">
+    <div className="mt-[10rem] md:mt-[15rem] lg:mt-[10rem] mb-[5rem]" data-aos="fade-up" data-aos-duration="2000">
       <h1 className="text-center font-bold text-[1.5rem] lg:text-[1.8rem] heading" data-aos="fade-up" data-aos-duration="2000">
         Services
       </h1>
@@ -96,7 +96,7 @@ const Services = ({ children: slides, autoSlide = false, autoSlideInterval = 300
   );
 };
 
-const ServiceSlide = ({ icon, title, description, backgroundImage }) => (
+const ServiceSlide = ({ image, icon, title, description, backgroundImage }) => (
   <div 
     className="w-full h-full flex-shrink-0 relative bg-cover bg-center flex items-center justify-center text-white"
     style={{ 
@@ -106,9 +106,11 @@ const ServiceSlide = ({ icon, title, description, backgroundImage }) => (
     }}
   >
     <div className="text-center max-w-2xl p-8 bg-black/50 rounded-xl">
-      <div className="mb-6 text-center">
-        {icon}
-      </div>
+      {icon ? (
+        <div className="mb-6 text-center">{icon}</div>
+      ) : (
+        <img src={image} alt="Service Placeholder" className="mb-6 w-20 h-20 mx-auto rounded-full object-cover" />
+      )}
       <h1 className="text-4xl font-bold mb-4">{title}</h1>
       <p className="text-xl">{description}</p>
     </div>
@@ -142,7 +144,9 @@ const ServicesContainer = () => {
     'https://images.pexels.com/photos/11780441/pexels-photo-11780441.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     'https://images.pexels.com/photos/326518/pexels-photo-326518.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     'https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    'https://images.pexels.com/photos/6153354/pexels-photo-6153354.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+    'https://images.pexels.com/photos/6153354/pexels-photo-6153354.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    'https://images.pexels.com/photos/39284/macbook-apple-imac-computer-39284.jpeg?auto=compress&cs=tinysrgb&w=600',
+    'https://images.pexels.com/photos/3861951/pexels-photo-3861951.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
   ];
 
   if (error) {
@@ -182,8 +186,21 @@ const ServicesContainer = () => {
         description={content.Service5C}
         backgroundImage={serviceBackgrounds[4]}
       />
+      <ServiceSlide
+        image={content.Service6Img}
+        title={content.Service6H}
+        description={content.Service6C}
+        backgroundImage={serviceBackgrounds[5]}
+      />
+      <ServiceSlide
+        image={content.Service6Img}
+        title={content.Service7H}
+        description={content.Service7C}
+        backgroundImage={serviceBackgrounds[6]}
+      />
     </Services>
   );
 };
 
 export default ServicesContainer;
+

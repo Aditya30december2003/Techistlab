@@ -13,6 +13,7 @@ import ServicesContainer from './pages/Services'
 import ScrollTop from './components/scrollTop'
 import PageLoadAnimation from './components/PageLoadAnimation'
 import {ThemeProvider} from './Context/ThemeContext'
+import BlogDetails from './pages/BlogDetails'
 function App() {
 
   return (
@@ -21,17 +22,18 @@ function App() {
     <Navbar/>
     <ScrollTop/>
      <Routes>
-      <Route path='/' element={<PageLoadAnimation><Home /> </PageLoadAnimation>}/>
+      <Route path='/' element={<PageLoadAnimation><Home /></PageLoadAnimation>}/>
       <Route path='/about' element={<About/>}/>
       <Route path='/team' element={<Team/>}/>
       <Route path='/services' element={<ServicesContainer/>}/>
       <Route path='/portfolio' element={<Portfolio/>}/>
       <Route path='/blog' element={<Blog/>}/>
+      <Route path="/blog/:id" element={<BlogDetails />} />
       <Route path='/careers' element={<Careers/>}/>
       <Route path='/contact' element={<Contact/>}/>
      </Routes> 
      </ThemeProvider>
-     <PageLoadAnimation> <Footer/></PageLoadAnimation>
+     <Footer/>
     </>
   )
 }
