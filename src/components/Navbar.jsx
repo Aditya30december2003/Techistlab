@@ -65,8 +65,9 @@ const Navbar = () => {
           isScrolled ? "shadow-md navbg" : "navbg"
         }`}
       >
-        <div className="text-[2rem] font-bold w-[50%] lg:w-[15%] px-4">
+        <div className="text-[2rem] font-bold w-[50%] lg:w-[15%] px-4 flex items-center flex-col">
           <img  className="w-[45rem] lg:w-[25rem]" src={logo} alt="Logo" data-aos="fade-up" data-aos-duration="2000"/>
+          <p className="text-[0.5rem]">Services to Propel Your Vision</p>
         </div>
         <div className="w-[60%] lg:w-[60%]  hidden lg:block ">
           <ul className="flex  w-[100%]  mx-auto items-center gap-7 text-[1rem] md:text-[0.8rem] lg:text-[1.1rem] justify-between" data-aos="fade-up" data-aos-duration="2000">

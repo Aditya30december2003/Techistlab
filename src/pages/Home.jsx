@@ -9,6 +9,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { databases } from "../Appwrite/appwrite";
 import BufferAnimation from "../components/BufferAnimation";
+import video from '../assets/video.mp4'
 
 const fetchContent = async (collectionId) => {
   try {
@@ -61,8 +62,22 @@ const Home = () => {
   if (!content.headingA) return <BufferAnimation />;
 
   return (
-    <div className="px-4 pt-[10rem] md:mt-[10rem] lg:mt-[1rem] mb-32" id="home">
-      <div className="flex flex-col gap-4">
+    <div className="relative px-4 pt-[5rem] md:mt-[10rem] lg:mt-[1rem] mb-32" id="home">
+      {/* Video Section */}
+      <div className="absolute inset-0 z-0">
+        <video
+          src={video}
+          autoPlay
+          loop
+          muted
+          className="w-full h-[46rem] object-cover"
+        />
+      </div>
+
+      <div className="">
+
+      {/* Content Section */}
+      <div className="relative z-10 flex flex-col gap-4 mt-20 bg-black  bg-opacity-60 py-10 w-[100%] lg:w-[60%] mx-auto">
         <p
           className="text-center text-[1.1rem] lg:text-[1.8rem] font-bold"
           data-aos="fade-up"
@@ -70,7 +85,7 @@ const Home = () => {
         >
           {content.taglineA}
         </p>
-        <div className="w-[6rem] my-10 bg-black h-[0.2rem] text-center mx-auto"></div>
+        <div className="w-[6rem] my-5 bg-white h-[0.2rem] text-center mx-auto"></div>
         <div
           className="text-[2.2rem] md:text-[5rem] lg:text-[3rem] text-center w-[95%] lg:w-[60%] mx-auto font-extrabold heading"
           data-aos="fade-up"
@@ -79,23 +94,24 @@ const Home = () => {
           {content.headingA}
         </div>
         <div className="bg-gradient-to-r font-bold text-[1rem] md:text-[2.5rem] lg:text-[1.3rem] mt-4 text-center w-[100%] lg:w-[80%] mx-auto">
-        <TypeAnimation
-  sequence={[
-    content.subheadingA, // First text
-    0,                   // No pause
-    content.subheadingB, // Second text (if any)
-    0,                   // No pause
-    content.subheadingC, // Third text (if any)
-    0,
-    content.subheadingD,
-    0,
-    content.subheadingE,
-  ]}
-  wrapper="span"
-  speed={50}
-  className="text-6x1 font-bold"
-  repeat={Infinity}
-/>
+          <TypeAnimation
+            sequence={[
+              content.subheadingA, // First text
+              0,                   // No pause
+              content.subheadingB, // Second text (if any)
+              0,                   // No pause
+              content.subheadingC, // Third text (if any)
+              0,
+              content.subheadingD,
+              0,
+              content.subheadingE,
+            ]}
+            wrapper="span"
+            speed={50}
+            className="text-6x1 font-bold"
+            repeat={Infinity}
+          />
+        </div>
 
         </div>
 
@@ -112,7 +128,7 @@ const Home = () => {
             )}`;
             window.location.href = mailtoLink;
           }}
-          className="mx-auto text-center w-[95%] lg:w-[45%] mt-28 lg:mt-20 flex items-center border p-2 rounded-[5rem]"
+          className="mx-auto text-center w-[95%] lg:w-[45%] mt-32 md:mt-[15rem] lg:mt-[13rem] flex items-center border p-2 rounded-[5rem]"
           data-aos="fade-up"
           data-aos-duration="2000"
         >
@@ -142,12 +158,27 @@ const Home = () => {
           <p className="w-[100%] lg:w-[70%] mx-auto text-left">
             <div className="text-[2.5rem]">At Techistlab</div>
             <ol className="flex flex-col gap-10 mt-4 mb-6">
-              <li  data-aos="fade-down"
-          data-aos-duration="2000" className="bg-black cursor-pointer text-white p-3 rounded-md shadow-[5px_5px_0px_0px_rgba(109,40,217)]">{content.contentA}</li>
-              <li  data-aos="fade-down"
-          data-aos-duration="2000" className="bg-black text-white p-3 rounded-md shadow-[5px_5px_0px_0px_rgba(109,40,217)]">{content.contentB}</li>
-              <li  data-aos="fade-down"
-          data-aos-duration="2000" className="bg-black text-white p-3 rounded-md shadow-[5px_5px_0px_0px_rgba(109,40,217)]">{content.contentC}</li>
+              <li
+                data-aos="fade-down"
+                data-aos-duration="2000"
+                className="bg-black cursor-pointer text-white p-3 rounded-md shadow-[5px_5px_0px_0px_rgba(109,40,217)]"
+              >
+                {content.contentA}
+              </li>
+              <li
+                data-aos="fade-down"
+                data-aos-duration="2000"
+                className="bg-black text-white p-3 rounded-md shadow-[5px_5px_0px_0px_rgba(109,40,217)]"
+              >
+                {content.contentB}
+              </li>
+              <li
+                data-aos="fade-down"
+                data-aos-duration="2000"
+                className="bg-black text-white p-3 rounded-md shadow-[5px_5px_0px_0px_rgba(109,40,217)]"
+              >
+                {content.contentC}
+              </li>
             </ol>
           </p>
         </div>
@@ -171,45 +202,33 @@ const Home = () => {
 
         <div className="grid mt-7 gap-16">
           <div className="flex flex-col lg:grid lg:grid-cols-3 gap-16">
-            {[
-              { icon: <FaReact size={70} />, title: content2.Service1H, description: content2.Service1C },
+            {[{ icon: <FaReact size={70} />, title: content2.Service1H, description: content2.Service1C },
               { icon: <SiAndroidstudio size={70} />, title: content2.Service2H, description: content2.Service2C },
-              { icon: <FaFigma size={70} />, title: content2.Servie3H, description: content2.Service3C },
-            ].map((service, index) => (
-              <div
-                key={index}
-                data-aos="fade-right"
-                data-aos-duration={`${1500 + index * 1000}`}
-                className="border-2 cursor-pointer p-6 flex flex-col gap-2 rounded-md shadow-[10px_10px_1px_1px_#D6B4FC] lg:hover:shadow-[10px_10px_1px_1px_#D6B4FC] hover:scale-105"
-              >
-                <p>{service.icon}</p>
-                <h1 className="font-bold text-[2rem]">{service.title}</h1>
-                <p className="text-[1.1rem] md:text-[1.8rem] lg:text-[1.1rem]">{service.description}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10 w-[100%] lg:w-[70%] mx-auto">
-            {[
-              { icon: <GiShoppingCart size={70} />, title: content2.Service4H, description: content2.Service4C },
-              { icon: <LuFileJson size={70} />, title: content2.Service5H, description: content2.Service5C },
-            ].map((service, index) => (
-              <div
-                key={index}
-                className="border-2 cursor-pointer p-6 flex flex-col gap-2 rounded-md shadow-[10px_10px_1px_1px_#D6B4FC] lg:hover:shadow-[10px_10px_1px_1px_#D6B4FC] hover:scale-105"
-                data-aos="fade-right"
-                data-aos-duration={`${1500 + index * 1000}`}
-              >
-                <p>{service.icon}</p>
-                <h1 className="font-bold text-[2rem]">{service.title}</h1>
-                <p className="text-[1.1rem] md:text-[1.8rem] lg:text-[1.1rem]">{service.description}</p>
-              </div>
-            ))}
+              { icon: <FaFigma size={70} />, title: content2.Servie3H, description: content2.Service3C }].map(
+              (service, index) => (
+                <div
+                  key={index}
+                  data-aos="fade-right"
+                  data-aos-duration={`${1500 + index * 1000}`}
+                  className="border-2 cursor-pointer p-6 flex flex-col gap-2 rounded-md shadow-[10px_10px_1px_1px_#D6B4FC] lg:hover:shadow-[10px_10px_1px_1px_#D6B4FC] hover:scale-105"
+                >
+                  <p>{service.icon}</p>
+                  <h1 className="font-bold text-[2rem]">{service.title}</h1>
+                  <p className="text-[1.1rem] md:text-[1.8rem] lg:text-[1.1rem]">{service.description}</p>
+                </div>
+              )
+            )}
           </div>
         </div>
       </div>
-      <div className="mt-20 text-center text-[1.7rem] w-[80%] md:w-[30%] p-2 mx-auto border-2 font-bold rounded-md shadow-[10px_10px_1px_1px_#D6B4FC] lg:hover:shadow-[10px_10px_1px_1px_#D6B4FC] hover:scale-95 cursor-pointer "  data-aos="fade-right"
-          data-aos-duration="2000">And Many More....</div>
+
+      <div
+        className="mt-20 text-center text-[1.7rem] w-[80%] md:w-[30%] p-2 mx-auto border-2 font-bold rounded-md shadow-[10px_10px_1px_1px_#D6B4FC] lg:hover:shadow-[10px_10px_1px_1px_#D6B4FC] hover:scale-95 cursor-pointer"
+        data-aos="fade-right"
+        data-aos-duration="2000"
+      >
+        And Many More....
+      </div>
     </div>
   );
 };
