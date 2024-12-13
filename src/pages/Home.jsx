@@ -64,7 +64,7 @@ const Home = () => {
   return (
     <div className="relative px-4 pt-[5rem] md:mt-[10rem] lg:mt-[1rem] mb-32" id="home">
       {/* Video Section */}
-      <div className="absolute inset-0 z-0">
+      <div className="inset-0 z-0">
         <video
           src={video}
           autoPlay
@@ -77,7 +77,7 @@ const Home = () => {
       <div className="">
 
       {/* Content Section */}
-      <div className="relative z-10 flex flex-col gap-4 mt-20 bg-black  bg-opacity-60 py-10 w-[100%] lg:w-[60%] mx-auto">
+      <div className="relative flex flex-col gap-4 mt-20 py-10 w-[100%] lg:w-[60%] mx-auto">
         <p
           className="text-center text-[1.1rem] lg:text-[1.8rem] font-bold"
           data-aos="fade-up"
@@ -185,27 +185,33 @@ const Home = () => {
       </div>
 
       <div className="mt-7 px-7 py-2">
-        <h1
-          className="font-bold text-[1.3rem]"
-          data-aos="fade-right"
-          data-aos-duration="3000"
-        >
-          Our Services
-        </h1>
-        <div
-          className="text-[2rem] lg:text-[2.5rem] font-bold"
-          data-aos="fade-right"
-          data-aos-duration="2000"
-        >
-          {content2.heading}
-        </div>
+          <h1
+            className="font-bold text-[1.3rem]"
+            data-aos="fade-right"
+            data-aos-duration="3000"
+          >
+            Our Services
+          </h1>
+          <div
+            className="text-[2rem] lg:text-[2.5rem] font-bold"
+            data-aos="fade-right"
+            data-aos-duration="2000"
+          >
+            {content2.heading}
+          </div>
 
-        <div className="grid mt-7 gap-16">
-          <div className="flex flex-col lg:grid lg:grid-cols-3 gap-16">
-            {[{ icon: <FaReact size={70} />, title: content2.Service1H, description: content2.Service1C },
-              { icon: <SiAndroidstudio size={70} />, title: content2.Service2H, description: content2.Service2C },
-              { icon: <FaFigma size={70} />, title: content2.Servie3H, description: content2.Service3C }].map(
-              (service, index) => (
+          <div className="grid mt-7 gap-16">
+            <div className="flex flex-col lg:grid lg:grid-cols-4 gap-16">
+              {[
+                { icon: <FaReact size={70} />, title: content2.Service1H, description: content2.Service1C },
+                { icon: <SiAndroidstudio size={70} />, title: content2.Service2H, description: content2.Service2C },
+                { icon: <FaFigma size={70} />, title: content2.Servie3H, description: content2.Service3C },
+                { icon: <GiShoppingCart size={70} />, title: content2.Service4H, description: content2.Service4C },
+                { icon: <LuFileJson size={70} />, title: content2.Service5H , description: content2.Service5C },
+                { icon: <img src={content2.img1} alt="Service icon" className="w-[70px] h-[70px] object-cover" />, title: content2.Service6H , description: content2.Service6C },
+                { icon: <img src={content2.img2} alt="Service icon" className="w-[70px] h-[70px] object-cover" />, title: content2.Service7H, description: content2.Service7C },
+                { icon: <img src={content2.img3} alt="Service icon" className="w-[70px] h-[70px] object-cover" />, title: content2.Service8H, description: content2.Service8C }
+              ].map((service, index) => (
                 <div
                   key={index}
                   data-aos="fade-right"
@@ -216,22 +222,20 @@ const Home = () => {
                   <h1 className="font-bold text-[2rem]">{service.title}</h1>
                   <p className="text-[1.1rem] md:text-[1.8rem] lg:text-[1.1rem]">{service.description}</p>
                 </div>
-              )
-            )}
+              ))}
+            </div>
           </div>
         </div>
-      </div>
 
-      <div
-        className="mt-20 text-center text-[1.7rem] w-[80%] md:w-[30%] p-2 mx-auto border-2 font-bold rounded-md shadow-[10px_10px_1px_1px_#D6B4FC] lg:hover:shadow-[10px_10px_1px_1px_#D6B4FC] hover:scale-95 cursor-pointer"
-        data-aos="fade-right"
-        data-aos-duration="2000"
-      >
-        And Many More....
+        <div
+          className="mt-20 text-center text-[1.7rem] w-[80%] md:w-[30%] p-2 mx-auto border-2 font-bold rounded-md shadow-[10px_10px_1px_1px_#D6B4FC] lg:hover:shadow-[10px_10px_1px_1px_#D6B4FC] hover:scale-95 cursor-pointer"
+          data-aos="fade-right"
+          data-aos-duration="2000"
+        >
+          And Many More....
+        </div>
       </div>
-    </div>
   );
 };
 
 export default Home;
-

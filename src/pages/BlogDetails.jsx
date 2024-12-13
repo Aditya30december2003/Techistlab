@@ -57,7 +57,7 @@ const BlogPage = () => {
       {/* Header Section with Background Image */}
       <div className="relative h-[30rem]">
         {/* Blog Header with Title and Subtitle */}
-        <div className="absolute inset-0 bg-black/80 p-10 flex flex-col justify-center text-white z-10">
+        <div className="absolute inset-0 bg-black/80 p-10 flex flex-col justify-center text-white ">
           <h1 className="text-center text-4xl font-bold">{content.title}</h1>
           <p className="text-center text-xl mt-4">{content.subtitle}</p>
         </div>
