@@ -123,11 +123,11 @@ const Portfolio = () => {
       <div className='mt-32'>
         <h1 className="text-center font-bold text-[1.8rem] heading" data-aos="fade-down"
         data-aos-duration="2000">Testimonials</h1>
-        <p className='text-center font-bold py-10 text-[1.2rem]' data-aos="fade-down"
+        <p className='text-center font-bold py-2  text-[1.2rem]' data-aos="fade-down"
         data-aos-duration="2000">{content.SubHeadingTest}</p>
 
 
-      <div className='flex flex-col md:flex-row lg:flex-col md:w-[100%] gap-20 mb-20 mt-20'>
+      <div className='flex flex-col md:flex-row lg:flex-col md:w-[100%] gap-20 mb-20 mt-10'>
         <div className="flex flex-col lg:flex-row items-center p-2 md:w-[100%] bg-gray-200 testimonials">
           <div className='w-[30%]' data-aos="fade-right"
         data-aos-duration="2000">

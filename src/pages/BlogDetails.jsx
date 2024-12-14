@@ -71,11 +71,11 @@ const BlogPage = () => {
       </div>
 
       {/* Blog Content Section */}
-      <div className="p-5 text-white mt-20">
+      <div className="p-5  mt-20">
         {/* Blog Writer Information */}
         <div className="flex flex-col items-center">
           <p className="text-lg font-semibold">{content.author}</p>
-          <p className="text-sm text-gray-400">{content.date}</p>
+          <p className="text-sm">{content.date}</p>
         </div>
 
         {/* Blog Content */}
