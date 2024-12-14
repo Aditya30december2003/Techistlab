@@ -148,7 +148,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       <div
-        className={`fixed z-100 top-0 left-0 w-full h-screen bg-gray-300 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-30 border border-gray-100 text-black-400 transform ${
+        className={`fixed z-100 top-0 left-0 w-full h-screen bg-gray-300 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-30  text-black-400 transform ${
           nav ? "translate-y-0" : "-translate-y-full"
         } transition-transform duration-500 z-10 lg:hidden`}
       >
