@@ -140,18 +140,18 @@ const Footer = () => {
         <h1 className="font-bold text-[1.3rem]">Get in touch</h1>
         <Link className="text-[1rem] font-light">
         <div className="flex flex-row items-center gap-3">
-          <p>
+          <Link to={content.website}>
             <FaGlobe size={40} />
-          </p>
-          <p>
+          </Link>
+          <Link  to={content.facebook}>
             <FaFacebookSquare size={40} />
-          </p>
-          <p>
+          </Link>
+          <Link  to={content.twitter}>
             <FaSquareXTwitter size={40} />
-          </p>
-          <p>
+          </Link>
+          <Link  to={content.insta}>
             <FaInstagramSquare size={40} />
-          </p>
+          </Link>
         </div>
         </Link>
         </div>
