@@ -3,7 +3,66 @@ import { FaGlobe } from "react-icons/fa";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaInstagramSquare } from "react-icons/fa";
+import { databases } from "../Appwrite/appwrite";
+import BufferAnimation from '../components/BufferAnimation'
+import { useState , useEffect } from 'react';
+
+const fetchFooterContent = async () => {
+  try {
+    const response = await databases.listDocuments(
+      "67594afc0000cafabf62", // Your database ID
+      "675de1df00361665c2f3"  // Your "footer" collection ID
+    );
+    
+    console.log("Raw Appwrite Response:", response);
+    console.log("Documents:", response.documents);
+    console.log("Total documents:", response.documents.length);
+    
+    if (response.documents.length > 0) {
+      console.log("First document full details:", response.documents[0]);
+      console.log("heading value:", response.documents[0].heading);
+    }
+    
+    return response.documents;
+  } catch (error) {
+    console.error("Detailed Appwrite Fetch Error:", {
+      message: error.message,
+      code: error.code,
+      type: error.type
+    });
+    throw error;
+  }
+};
 const Footer = () => {
+
+  const [content, setContent] = useState(null);
+    const [error, setError] = useState(null);
+  
+    useEffect(()=>{
+      const loadContent = async () => {
+        try {
+          const data = await fetchFooterContent();
+          console.log("Fetched data in component:", data);
+          
+          if (data && data.length > 0) {
+            console.log("Setting content:", data[0]);
+            setContent(data[0]);
+          } else {
+            console.warn("No documents found");
+            setError("No content available");
+          }
+        } catch (err) {
+          console.error("Component fetch error:", err);
+          setError(err.message);
+        }
+      };
+  
+      loadContent();
+    },[])
+    if (error) {
+      return <div>Error: {error}</div>;
+    }
+    if (!content) return <BufferAnimation/>;
   return (
     <div className="w-full bg-gray-300 text-black p-4 lg:p-5">
       <div className='mb-0'>
@@ -38,24 +97,24 @@ const Footer = () => {
           </button>
         </form>
       </div>
-  <div className="flex flex-col md:flex-row gap-[1rem] lg:gap-[6rem] items-center">
-  <div className="flex justify-center items-center p-14">
-  <div className="bg-gray-400 rounded-full w-[10rem] h-[10rem] lg:w-[12rem] lg:h-[12rem] flex-col text-center justify-center items-center">
+  <div className="flex flex-col md:flex-row gap-[1rem] lg:gap-[6rem] lg:items-center">
+  <div className="md:flex hidden justify-center items-center p-14">
+  <div className="hidden md:block bg-gray-400 rounded-full w-[10rem] h-[10rem] lg:w-[12rem] lg:h-[12rem] flex-col text-center justify-center items-center">
     <img 
       src="https://techistlab.co.uk/assets/logo-D8JJhk6e.png" 
       alt="Logo" 
-      className="w-32 h-32 lg:w-48 lg:h-48 object-contain mx-auto"
+      className=" lg:w-48 lg:h-48 object-contain mx-auto"
     />
   </div>
 </div>
 
-        <div className="flex flex-col gap-3">
-          <h1 className="font-bold text-[1.3rem]">Legal Terms</h1>
-          <p to="/about"  className="text-[1rem] font-light">Terms of use</p>
-          <p to="/blog"  className="text-[1rem] font-light">Terms & Conditions</p>
-          <p to="/careers"  className="text-[1rem] font-light">Privacy policy</p>
-          <p to="/contact"  className="text-[1rem] font-light">Contact</p>
-          <p to="/portfolio"  className="text-[1rem] font-light">Cookie policy</p>
+        <div className="flex flex-col gap-3 mt-5 md:mt-0">
+          <h1 className="font-bold text-[1.3rem]">{content.legalTerm1}</h1>
+          <p to="/about"  className="text-[1rem] font-light">{content.legalTerm2}</p>
+          <p to="/blog"  className="text-[1rem] font-light">{content.legalTerm3}</p>
+          <p to="/careers"  className="text-[1rem] font-light">{content.legalTerm4}</p>
+          <Link to="/contact"  className="text-[1rem] font-light">Contact</Link>
+          <p to="/portfolio"  className="text-[1rem] font-light">{content.legalTerm5}</p>
         </div>
         <div className='flex gap-2 flex-col'>
         <div className="flex flex-col gap-1 text-[2.3rem]">
@@ -64,15 +123,17 @@ const Footer = () => {
         </div>
         <div>
         <h1 className="font-bold text-[1.3rem]">Where to find us?</h1>
-        <Link className="text-[1rem] font-light">Floor, London, England, W1W 5PF</Link>
+        <div className="text-[1rem] font-light"><span className='font-bold'>Address 1 :</span>{content.Address1}</div>
+        <div className="text-[1rem] font-light"><span className='font-bold'>Address 2 :</span>{content.Address2}</div>
+        <div className="text-[1rem] font-light"><span className='font-bold'>Address 3 :</span>{content.Address3}</div>
         </div>
         <div>
         <h1 className="font-bold text-[1.3rem]">Phone no.</h1>
-        <Link className="text-[1rem] font-light">+44(0)20 3723 6703</Link>
+        <Link className="text-[1rem] font-light">{content.phoneNum}</Link>
         </div>
         <div>
         <h1 className="font-bold text-[1.3rem]">Email</h1>
-        <Link className="text-[1rem] font-light">ask@techistlab.co.uk</Link>
+        <Link className="text-[1rem] font-light">{content.email}</Link>
         </div>
         </div>
         <div className='flex flex-col gap-10'>

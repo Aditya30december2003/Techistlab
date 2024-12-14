@@ -181,19 +181,19 @@ const Contact = () => {
             
           >
             <div className="p-3 rounded-md shadow-[5px_5px_0px_0px_rgba(109,40,217)] border-2">
-            <h3 className="text-2xl font-semibold mb-2 text-[2rem]">Address</h3>
-            <p className="text-[2.4rem]">
+            <h3 className="text-2xl font-semibold mb-2 text-[1.4rem]">Address</h3>
+            <p className="text-[1.5rem]">
             167-169 Great Portland Street, 5th Floor, London, England, W1W 5PF
             </p>
             </div>
             <div className="p-3 rounded-md shadow-[5px_5px_0px_0px_rgba(109,40,217)] mt-20 border">
-            <h3 className="text-2xl font-semibold mt-4 mb-2 text[2rem]">Call us on:</h3>
-            <p className="text-[2.4rem]">+44(0)20 3723 6703</p>
+            <h3 className="text-2xl font-semibold mt-4 mb-2 text[1.4rem]">Call us on:</h3>
+            <p className="text-[1.5rem]">+44(0)20 3723 6703</p>
             </div>
             <div className="p-3 rounded-md shadow-[5px_5px_0px_0px_rgba(109,40,217)] mt-20 border">
 
-            <h3 className="text-2xl font-semibold mt-4 mb-2 text-[2rem]">Email us on:</h3>
-            <p className="text-[2.4rem]">
+            <h3 className="text-2xl font-semibold mt-4 mb-2 text-[1.4rem]">Email us on:</h3>
+            <p className="text-[1.5rem]">
               <a href="mailto:ask@techistlab.co.uk" className="text-blue-500">
               {content.email}
               </a>

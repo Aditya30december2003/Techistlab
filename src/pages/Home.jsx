@@ -10,6 +10,7 @@ import "aos/dist/aos.css";
 import { databases } from "../Appwrite/appwrite";
 import BufferAnimation from "../components/BufferAnimation";
 import video from '../assets/video.mp4'
+import logo from '../assets/logo.png'
 
 const fetchContent = async (collectionId) => {
   try {
@@ -64,20 +65,26 @@ const Home = () => {
   return (
     <div className="relative px-4 pt-[5rem] md:mt-[10rem] lg:mt-[1rem] mb-32" id="home">
       {/* Video Section */}
-      <div className="inset-0 z-0">
-        <video
-          src={video}
-          autoPlay
-          loop
-          muted
-          className="w-full h-[46rem] object-cover"
-        />
-      </div>
+      <div className="relative inset-0 z-0">
+  <video
+    src={video}
+    autoPlay
+    loop
+    muted
+    className="w-full h-[20rem] lg:h-[46rem] lg:object-cover"
+  />
+  <img
+    src={logo} // Make sure to replace `watermarkImage` with your image source
+    alt="Watermark"
+    className="absolute top-10 right-5 w-20 lg:w-44 h-10 lg:h-24 opacity-30" // Adjust positioning and size as needed
+  />
+</div>
+
 
       <div className="">
 
       {/* Content Section */}
-      <div className="relative flex flex-col gap-4 mt-20 py-10 w-[100%] lg:w-[60%] mx-auto">
+      <div className="relative flex flex-col gap-4 mt-5 lg:mt-2 py-0 lg:py-10 w-[100%] lg:w-[60%] mx-auto">
         <p
           className="text-center text-[1.1rem] lg:text-[1.8rem] font-bold"
           data-aos="fade-up"
@@ -87,13 +94,13 @@ const Home = () => {
         </p>
         <div className="w-[6rem] my-5 patti h-[0.2rem] text-center mx-auto"></div>
         <div
-          className="text-[2.2rem] md:text-[5rem] lg:text-[3rem] text-center w-[95%] lg:w-[60%] mx-auto font-extrabold heading"
+          className="text-[2.2rem] md:text-[5rem] lg:text-[3rem] text-center w-[95%] lg:w-[100%] mx-auto font-extrabold heading"
           data-aos="fade-up"
           data-aos-duration="2000"
         >
           {content.headingA}
         </div>
-        <div className="bg-gradient-to-r font-bold text-[1rem] md:text-[2.5rem] lg:text-[1.3rem] mt-4 text-center w-[100%] lg:w-[80%] mx-auto">
+        <div className="font-bold text-[1rem] md:text-[2.5rem] lg:text-[1.3rem] mt-4 text-center w-[100%] lg:w-[80%] mx-auto">
           <TypeAnimation
             sequence={[
               content.subheadingA, // First text
@@ -128,7 +135,7 @@ const Home = () => {
             )}`;
             window.location.href = mailtoLink;
           }}
-          className="mx-auto text-center w-[95%] lg:w-[45%] mt-32 md:mt-[15rem] lg:mt-[13rem] flex items-center border p-2 rounded-[5rem]"
+          className="mx-auto text-center w-[95%] lg:w-[45%] mt-10 md:mt-[15rem] lg:mt-[2.5rem] flex items-center border p-2 rounded-[5rem]"
           data-aos="fade-up"
           data-aos-duration="2000"
         >
