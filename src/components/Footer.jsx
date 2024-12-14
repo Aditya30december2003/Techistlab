@@ -125,8 +125,8 @@ const Footer = () => {
         <h1 className="font-bold text-[1.3rem]">Where to find us?</h1>
         <div className='flex gap-5'>
         <div className="text-[1rem] font-light flex flex-col"><span className='font-bold'>Address 1</span><span>{content.Address1}</span></div>
-        <div className="text-[1rem] font-light flex flex-col"><span className='font-bold'>Address 2</span><span>{content.Address1}</span></div>
-        <div className="text-[1rem] font-light flex flex-col"><span className='font-bold'>Address 3</span><span>{content.Address1}</span></div>
+        <div className="text-[1rem] font-light flex flex-col"><span className='font-bold'>Address 2</span><span>{content.Address2}</span></div>
+        <div className="text-[1rem] font-light flex flex-col"><span className='font-bold'>Address 3</span><span>{content.Address3}</span></div>
         </div>
         </div>
         <div>
