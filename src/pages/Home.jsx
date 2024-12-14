@@ -208,7 +208,7 @@ const Home = () => {
           </div>
 
           <div className="grid mt-7 gap-16">
-            <div className="flex flex-col lg:grid lg:grid-cols-4 gap-16">
+            <div className="flex flex-col md:grid md:grid-cols-3 lg:grid lg:grid-cols-3 gap-16">
               {[
                 { icon: <FaReact size={70} />, title: content2.Service1H, description: content2.Service1C },
                 { icon: <SiAndroidstudio size={70} />, title: content2.Service2H, description: content2.Service2C },

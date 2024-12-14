@@ -97,18 +97,18 @@ const Footer = () => {
           </button>
         </form>
       </div>
-  <div className="flex flex-col md:flex-row gap-[1rem] lg:gap-[6rem] lg:items-center">
+  <div className="flex flex-col lg:flex-row gap-[0.5rem] lg:gap-[2rem] lg:items-center text-center">
   <div className="md:flex hidden justify-center items-center p-14">
-  <div className="hidden md:block bg-gray-400 rounded-full w-[10rem] h-[10rem] lg:w-[12rem] lg:h-[12rem] flex-col text-center justify-center items-center">
+  <div className="hidden lg::block bg-gray-400 rounded-full w-[10rem] h-[10rem] lg:w-[12rem] lg:h-[12rem] flex-col text-center justify-center items-center">
     <img 
       src="https://techistlab.co.uk/assets/logo-D8JJhk6e.png" 
       alt="Logo" 
-      className=" lg:w-48 lg:h-48 object-contain mx-auto"
+      className="w-32 h-32  lg:w-48 lg:h-48 object-contain mx-auto"
     />
   </div>
 </div>
 
-        <div className="flex flex-col gap-3 mt-5 md:mt-0">
+        <div className="flex flex-col gap-3 mt-5 md:mt-0  w-[30%] mx-auto">
           <h1 className="font-bold text-[1.3rem]">{content.legalTerm1}</h1>
           <p to="/about"  className="text-[1rem] font-light">{content.legalTerm2}</p>
           <p to="/blog"  className="text-[1rem] font-light">{content.legalTerm3}</p>
@@ -116,16 +116,18 @@ const Footer = () => {
           <Link to="/contact"  className="text-[1rem] font-light">Contact</Link>
           <p to="/portfolio"  className="text-[1rem] font-light">{content.legalTerm5}</p>
         </div>
-        <div className='flex gap-2 flex-col'>
-        <div className="flex flex-col gap-1 text-[2.3rem]">
+        <div className="flex flex-col gap-1 text-[2.3rem] mt-10 lg:mt-[-9.5rem]">
           <h1 className="font-bold text-[1.3rem]">Careers</h1>
           <Link className="text-[1rem] font-light">Job Search</Link>
         </div>
-        <div>
+        <div className='flex gap-2 flex-col items-center  w-[100%] mt-5'>
+        <div className='flex flex-col items-center'>
         <h1 className="font-bold text-[1.3rem]">Where to find us?</h1>
-        <div className="text-[1rem] font-light"><span className='font-bold'>Address 1 :</span>{content.Address1}</div>
-        <div className="text-[1rem] font-light"><span className='font-bold'>Address 2 :</span>{content.Address2}</div>
-        <div className="text-[1rem] font-light"><span className='font-bold'>Address 3 :</span>{content.Address3}</div>
+        <div className='flex gap-5'>
+        <div className="text-[1rem] font-light flex flex-col"><span className='font-bold'>Address 1</span><span>{content.Address1}</span></div>
+        <div className="text-[1rem] font-light flex flex-col"><span className='font-bold'>Address 2</span><span>{content.Address1}</span></div>
+        <div className="text-[1rem] font-light flex flex-col"><span className='font-bold'>Address 3</span><span>{content.Address1}</span></div>
+        </div>
         </div>
         <div>
         <h1 className="font-bold text-[1.3rem]">Phone no.</h1>
@@ -138,8 +140,8 @@ const Footer = () => {
         </div>
         <div className='flex flex-col gap-10'>
         <h1 className="font-bold text-[1.3rem]">Get in touch</h1>
-        <Link className="text-[1rem] font-light">
-        <div className="flex flex-row items-center gap-3">
+        <Link className="text-[1rem] font-light mx-auto mt-3">
+        <div className="flex flex-row items-center gap-3 mx-auto">
           <Link to={content.website}>
             <FaGlobe size={40} />
           </Link>
