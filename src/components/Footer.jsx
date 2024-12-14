@@ -99,7 +99,7 @@ const Footer = () => {
       </div>
   <div className="flex flex-col lg:flex-row gap-[0.5rem] lg:gap-[2rem] lg:items-center text-center">
   <div className="md:flex hidden justify-center items-center p-14">
-  <div className="hidden lg::block bg-gray-400 rounded-full w-[10rem] h-[10rem] lg:w-[12rem] lg:h-[12rem] flex-col text-center justify-center items-center">
+  <div className="hidden lg:block bg-gray-400 rounded-full w-[10rem] h-[10rem] lg:w-[12rem] lg:h-[12rem] flex-col text-center justify-center items-center">
     <img 
       src="https://techistlab.co.uk/assets/logo-D8JJhk6e.png" 
       alt="Logo" 
