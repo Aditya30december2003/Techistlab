@@ -113,8 +113,8 @@ const About = () => {
       <div className="mt-10">
         <h1 className="text-[3.4rem] font-bold" data-aos="fade-up"
         data-aos-duration="1500">Our Mission</h1>
-        <p className=" mb-[3rem] w-[80%] mx-auto" data-aos="fade-up"
-        data-aos-duration="1500">We believe that technology should simplify life, not complicate it. Our mission is to help businesses harness the power of digital solutions to improve efficiency, reach new audiences, and deliver exceptional customer experiences.</p>
+        <p className=" mb-[3rem] w-[80%] mx-auto text-[1.1rem] lg:text-[1.3rem]" data-aos="fade-up"
+        data-aos-duration="1500" >{content.subHeading}</p>
       </div>
 
       <div data-aos="fade-down"
