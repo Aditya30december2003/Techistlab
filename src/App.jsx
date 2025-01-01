@@ -3,8 +3,9 @@ import About from './pages/About'
 import Blog from './pages/Blog'
 import Portfolio from './pages/Portfolio'
 import Careers from './pages/Careers'
-import Service from './pages/Services'
+// import Service from './pages/Services'
 import Navbar from './components/Navbar'
+import Terms from './pages/Terms'
 import Home from './pages/Home'
 import Team from './pages/Team'
 import Footer from './components/Footer'
@@ -31,6 +32,7 @@ function App() {
       <Route path="/blog/:id" element={<BlogDetails />} />
       <Route path='/careers' element={<Careers/>}/>
       <Route path='/contact' element={<Contact/>}/>
+      <Route path='/terms' element={<PageLoadAnimation><Terms/></PageLoadAnimation>} />
      </Routes> 
      </ThemeProvider>
      <Footer/>

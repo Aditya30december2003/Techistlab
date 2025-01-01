@@ -110,9 +110,9 @@ const Footer = () => {
 
         <div className="flex flex-col gap-3 mt-5 md:mt-0  w-[30%] mx-auto">
           <h1 className="font-bold text-[1.3rem]">{content.legalTerm1}</h1>
-          <p to="/about"  className="text-[1rem] font-light">{content.legalTerm2}</p>
-          <p to="/blog"  className="text-[1rem] font-light">{content.legalTerm3}</p>
-          <p to="/careers"  className="text-[1rem] font-light">{content.legalTerm4}</p>
+          <Link to="/terms"  className="text-[1rem] font-light">{content.legalTerm2}</Link>
+          <Link to="/blog"  className="text-[1rem] font-light">{content.legalTerm3}</Link>
+          <Link to="/careers"  className="text-[1rem] font-light">{content.legalTerm4}</Link>
           <Link to="/contact"  className="text-[1rem] font-light">Contact</Link>
           <p to="/portfolio"  className="text-[1rem] font-light">{content.legalTerm5}</p>
         </div>

@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { useEffect} from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import { GoSun } from "react-icons/go";
 import { FaMoon } from "react-icons/fa";
 import { useState } from "react";
@@ -19,10 +19,12 @@ import 'aos/dist/aos.css'
 import { useTheme } from "../Context/ThemeContext";
 
 const Navbar = () => {
+  const location = useLocation()
   const {theme, toggleTheme} = useTheme();
   const [icon , setIcon] = useState(true)
   const [nav, setNav] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  // const location = useLocation();
   const toggleMode = () => {
     setIcon(!icon)
     toggleTheme();
@@ -31,7 +33,7 @@ const Navbar = () => {
   // Track scroll position
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10); // Add shadow after 10px scroll
+      
       Aos.init({duration:2000});
     };
 
@@ -57,13 +59,15 @@ const Navbar = () => {
     color: isActive ? 'white' : 'inherit'
   });
 
+  const isTermsPage = location.pathname === "/terms";
+
   return ( 
     <div className="navbar">
       {/* Navbar */}
       <div
-        className={`flex justify-between lg:gap-10  items-center px-2 py-4 mb-20 w-[100%] fixed top-0 left-0 z-50 transition-shadow duration-300 ${
-          isScrolled ? "shadow-md navbg" : "navbg"
-        }`}
+       className={`flex justify-between lg:gap-10 items-center px-2 py-4 w-[100%] fixed top-0 left-0 z-50 transition-shadow duration-300 ${
+        !isTermsPage && isScrolled ? "shadow-md navbg" : "navbg"
+      } ${isTermsPage ? "sticky" : ""}`} 
       >
         <div className="text-[2rem] font-bold w-[50%] lg:w-[15%] px-4 flex items-center flex-col">
           <img  className="w-[45rem] lg:w-[25rem]" src={logo} alt="Logo" data-aos="fade-up" data-aos-duration="2000"/>
