@@ -55,7 +55,7 @@ const FaqItem = ({ question, answer, isOpen, onClick, index }) => {
         className="flex justify-between items-center cursor-pointer"
         onClick={onClick}
       >
-        <h3 className="text-lg font-medium">{question}</h3>
+        <h3 className="text-lg font-medium text-black">{question}</h3>
         <button className="text-purple-500 font-bold text-xl">
           {!isOpen ? <CiSquarePlus/> : <CiSquareMinus/>}
         </button>
