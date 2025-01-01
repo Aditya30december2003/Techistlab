@@ -235,7 +235,7 @@ const Navbar = () => {
           </NavLink>
         </ul>
         <div
-          className="cursor-pointer py-10 shadow-[0_3px_10px_rgb(0,0,0,0.2)] flex flex-col items-center mx-auto p-4 w-24 h-24 rounded-[10rem] gap-2"
+          className="cursor-pointer py-10 shadow-[0_3px_10px_rgb(0,0,0,0.2)] flex flex-col items-center mx-auto p-4 w-24 h-24 rounded-[10rem] gap-2 mt-[-2rem]"
           onClick={toggleMode}
         >
           {!icon ? <GoSun /> : <FaMoon />}
