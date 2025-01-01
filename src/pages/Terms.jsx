@@ -10,7 +10,7 @@ const Terms = () => {
     <div className="relative mt-[5rem] md:mt-[10rem] lg:mt-[0rem]">
       <div>
       <div
-          className="font-extrabold absolute mt-28 lg:mt-28 z-100 w-full p-10 flex flex-col items-center"
+          className="font-extrabold absolute mt-10 lg:mt-28 z-100 w-full p-10 flex flex-col items-center"
         >
           <h1 className="text-center text-[0.3rem] lg:text-3xl heading text-purple-500">
             Terms & Conditions
@@ -29,12 +29,16 @@ const Terms = () => {
       </div>
       </div>
 
+      <div className='flex flex-col gap-[2vh] md:gap-[25vh] lg:gap-[2vh] xl:gap-[60vh]'>
+
       <div className='flex  max-w-[1150px] gap-14 mx-auto mt-14 w-full'>
         <TermsContent/>
       </div>
 
       <div>
         <Faqs/>
+      </div>
+
       </div>
 
     </div>

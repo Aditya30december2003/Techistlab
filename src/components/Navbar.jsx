@@ -157,20 +157,17 @@ const Navbar = () => {
         } transition-transform duration-500 z-10 lg:hidden`}
       >
         {/* Close Icon */}
-        <div
-          onClick={() => setNav(false)}
-          className="ml-[85%] mt-2 bg-gray-500 p-2 rounded-[100%] cursor-pointer"
-        ></div>
+
 
         {/* Mobile Menu Links */}
-        <ul className="grid mt-20 md:mt-52 grid-cols-2 mx-auto w-[70%] items-center gap-10 text-[1rem] justify-between py-5 my-auto">
+        <ul className={!isTermsPage?"grid mt-28 md:mt-52 grid-cols-2 mx-auto w-[70%] items-center gap-10 text-[1rem] justify-between py-5 my-auto":"grid mt-5 md:mt-52 grid-cols-2 mx-auto w-[70%] items-center gap-10 text-[1rem] justify-between py-5 my-auto"}>
           <NavLink
             className="flex flex-col items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)] mx-auto p-4 w-24 h-24 rounded-[10rem] gap-2"
             style={activeMobileNavLinkStyle}
             to="/"
             onClick={() => setNav(false)}
           >
-            <CiHome size={25} />
+            <CiHome size={20} />
             <p>Home</p>
           </NavLink>
           <NavLink
@@ -179,7 +176,7 @@ const Navbar = () => {
             to="/about"
             onClick={() => setNav(false)}
           >
-            <MdRoundaboutLeft size={25} />
+            <MdRoundaboutLeft size={20} />
             <p>About</p>
           </NavLink>
           <NavLink
@@ -188,7 +185,7 @@ const Navbar = () => {
             to="/blog"
             onClick={() => setNav(false)}
           >
-            <RiBloggerLine size={25} />
+            <RiBloggerLine size={20} />
             <p>Blog</p>
           </NavLink>
           <NavLink
@@ -197,7 +194,7 @@ const Navbar = () => {
             to="/careers"
             onClick={() => setNav(false)}
           >
-            <HiMiniArrowTrendingUp size={25} />
+            <HiMiniArrowTrendingUp size={20} />
             <p>Careers</p>
           </NavLink>
           <NavLink
@@ -206,7 +203,7 @@ const Navbar = () => {
             to="/contact"
             onClick={() => setNav(false)}
           >
-            <CiVoicemail size={25} />
+            <CiVoicemail size={20} />
             <p>Contact</p>
           </NavLink>
           <NavLink
@@ -224,7 +221,7 @@ const Navbar = () => {
             to="/services"
             onClick={() => setNav(false)}
           >
-            <MdOutlineMiscellaneousServices size={25} />
+            <MdOutlineMiscellaneousServices size={20} />
             <p>Services</p>
           </NavLink>
           <NavLink
@@ -233,7 +230,7 @@ const Navbar = () => {
             to="/team"
             onClick={() => setNav(false)}
           >
-            <RiTeamLine size={25} />
+            <RiTeamLine size={20} />
             <p>Teams</p>
           </NavLink>
         </ul>
