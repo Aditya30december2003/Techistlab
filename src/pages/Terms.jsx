@@ -3,6 +3,7 @@ import { FaHome } from "react-icons/fa";
 import { SlArrowRight } from "react-icons/sl";
 import {Link} from 'react-router-dom'
 import TermsContent from '../components/TermsContent';
+import Faqs from '../components/Faqs';
 
 const Terms = () => {
   return (
@@ -30,6 +31,10 @@ const Terms = () => {
 
       <div className='flex  max-w-[1150px] gap-14 mx-auto mt-14 w-full'>
         <TermsContent/>
+      </div>
+
+      <div>
+        <Faqs/>
       </div>
 
     </div>
