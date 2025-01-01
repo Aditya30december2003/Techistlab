@@ -144,7 +144,7 @@ const TermsLayout = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  mb-0 lg:mb-[20rem]">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  mb-0 lg:mb-[23rem]">
       <div className="flex gap-10 py-8">
         {/* Left Navigation */}
         <div className="w-[30%] h-screen sticky top-0 hidden md:block">
