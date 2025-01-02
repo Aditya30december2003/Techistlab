@@ -4,6 +4,7 @@ import { databases } from "../Appwrite/appwrite";
 const TermsLayout = () => {
   const [termsData, setTermsData] = useState([]);
   const [activeTerm, setActiveTerm] = useState(null);
+  const [expandedSections, setExpandedSections] = useState({});
   const databaseId = "67594afc0000cafabf62";
   const collectionId = "6775a4f6000899aa36bd";
 
@@ -23,6 +24,13 @@ const TermsLayout = () => {
     fetchTerms();
   }, []);
 
+  const toggleSection = (id) => {
+    setExpandedSections((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
+
   const navItems = termsData.map((item) => ({
     id: item.$id,
     text: item.Title,
@@ -33,42 +41,6 @@ const TermsLayout = () => {
     title: item.Title,
     content: item.TitleContent,
   }));
-
-  const handleScroll = () => {
-    const handleScrollThrottled = () => {
-      const sections = contentSections.map((section) => ({
-        id: section.id,
-        element: document.getElementById(section.id),
-      }));
-
-      const sectionPositions = sections
-        .map((section) => {
-          if (!section.element) return null;
-          const rect = section.element.getBoundingClientRect();
-          return {
-            id: section.id,
-            top: rect.top,
-          };
-        })
-        .filter(Boolean);
-
-      const activeSection = sectionPositions.reduce((closest, current) => {
-        if (!closest) return current;
-        return Math.abs(current.top) < Math.abs(closest.top) ? current : closest;
-      }, null);
-
-      if (activeSection && activeSection.id !== activeTerm) {
-        setActiveTerm(activeSection.id);
-      }
-    };
-
-    requestAnimationFrame(handleScrollThrottled);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [contentSections, activeTerm]);
 
   const handleClick = (id) => {
     const section = document.getElementById(id);
@@ -102,10 +74,7 @@ const TermsLayout = () => {
           <nav>
             <ul className="flex flex-col gap-4 p-4">
               {navItems.map((item) => (
-                <li
-                  key={item.id}
-                  className="relative duration-100"
-                >
+                <li key={item.id} className="relative duration-100">
                   <div
                     className={`absolute -left-4 top-0 h-full w-1 transition-all duration-200 ${
                       activeTerm === item.id ? "bg-purple-500" : "bg-transparent"
@@ -128,15 +97,25 @@ const TermsLayout = () => {
         {/* Right Content */}
         <div className="w-full md:w-[70%]">
           {contentSections.map((section) => (
-            <section
-              key={section.id}
-              id={section.id}
-              className="mb-16 scroll-mt-20"
-            >
-              <h2 className="text-3xl font-medium mb-8">{section.title}</h2>
-              <div className="text-[1rem] lg:text-lg leading-relaxed prose prose-purple max-w-none">
-                {section.content}
+            <section key={section.id} id={section.id} className="mb-16">
+              <div
+                className="cursor-pointer flex justify-between items-center"
+                onClick={() => toggleSection(section.id)}
+              >
+                <h2 className="text-3xl font-medium">{section.title}</h2>
+                <button
+                  className={`text-lg font-medium transition-transform ${
+                    expandedSections[section.id] ? "rotate-180" : "rotate-0"
+                  }`}
+                >
+                  ▼
+                </button>
               </div>
+              {expandedSections[section.id] && (
+                <div className="mt-4 text-[1rem] lg:text-lg leading-relaxed prose prose-purple max-w-none">
+                  {section.content}
+                </div>
+              )}
             </section>
           ))}
         </div>

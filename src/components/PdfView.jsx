@@ -13,7 +13,7 @@ const PdfView = () => {
         // Get file view URL from storage bucket
         const fileId = '677633d9000b815591e7'; // Replace with your PDF file ID
         const result = storage.getFileView('677633960027ce682e5b', fileId); // 'pdf' is your bucket ID
-        console.log(result); 
+        console.log(result);
         setPdfUrl(result);
         setIsLoading(false);
       } catch (error) {
@@ -54,17 +54,14 @@ const PdfView = () => {
   }
 
   return (
-    <div className="w-full h-screen  p-4 mb-20">
-      <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-lg h-full">
-        {pdfUrl && (
-          <iframe
-            src={pdfUrl}
-            className="w-full h-full rounded-lg"
-            title="PDF Viewer"
-            loading="lazy"
-          />
-        )}
-      </div>
+    <div className="flex items-center justify-center  py-20 ">
+      <button
+        onClick={() => window.open(pdfUrl, '_blank')}
+         className="mt-0 text-center text-[1.7rem] w-[80%] md:w-[30%] p-2 mx-auto border-2 font-bold rounded-md shadow-[10px_10px_1px_1px_#D6B4FC] lg:hover:shadow-[10px_10px_1px_1px_#D6B4FC] hover:scale-95 cursor-pointer"
+        disabled={!pdfUrl} // Disable button if URL is not available
+      >
+        View as PDF
+      </button>
     </div>
   );
 };

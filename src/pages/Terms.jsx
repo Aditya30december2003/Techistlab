@@ -35,11 +35,7 @@ const Terms = () => {
       <div className='flex  max-w-[1150px] gap-10 mx-auto mt-4 w-full'>
         <TermsContent/>
       </div>
-
-      <div>
-        <Faqs/>
-      </div>
-
+      
       <div>
         <Versions/>
       </div>

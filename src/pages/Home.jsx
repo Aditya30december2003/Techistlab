@@ -11,6 +11,7 @@ import { databases } from "../Appwrite/appwrite";
 import BufferAnimation from "../components/BufferAnimation";
 import video from '../assets/video.mp4'
 import logo from '../assets/logo.png'
+import Faqs from "../components/Faqs";
 
 const fetchContent = async (collectionId) => {
   try {
@@ -240,6 +241,10 @@ const Home = () => {
           data-aos-duration="2000"
         >
           And Many More....
+        </div>
+
+        <div className="mt-32">
+          <Faqs/>
         </div>
       </div>
   );

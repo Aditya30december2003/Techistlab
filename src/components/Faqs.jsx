@@ -43,13 +43,15 @@ const FaqItem = ({ question, answer, isOpen, onClick }) => {
   return (
     <div 
       ref={containerRef}
-      className="bg-white rounded-lg shadow-md p-4 transition-all duration-200"
+      className="border-2 cursor-pointer p-6 flex flex-col gap-2 rounded-md shadow-[10px_10px_1px_1px_#D6B4FC] lg:hover:shadow-[10px_10px_1px_1px_#D6B4FC]"
+      data-aos="fade-down"
+      data-aos-duration='2000'
     >
       <div 
         className="flex justify-between items-center cursor-pointer"
         onClick={onClick}
       >
-        <h3 className="text-lg font-medium text-black">{question}</h3>
+        <h3 className="text-lg font-medium">{question}</h3>
         <button className="text-purple-500 font-bold text-2xl">
           {!isOpen ? <CiSquarePlus /> : <CiSquareMinus />}
         </button>
@@ -60,7 +62,7 @@ const FaqItem = ({ question, answer, isOpen, onClick }) => {
         style={{ height: 0 }}
       >
         <div className="pt-4">
-          <p className="text-gray-600 leading-relaxed">
+          <p className="leading-relaxed">
             {answer}
           </p>
         </div>
@@ -116,7 +118,7 @@ const Faqs = () => {
 
   if (isLoading) {
     return (
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-10 bg-red-500">
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="text-center">
           <div className="animate-pulse">
             <div className="h-8 bg-gray-200 rounded w-64 mx-auto mb-8"></div>
@@ -143,12 +145,13 @@ const Faqs = () => {
 
   return (
     <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-0 lg:py-7">
-      <div className="text-center mb-12">
+      <div className="text-center mb-12" data-aos="fade-up"
+            data-aos-duration='2000'>
         <h1 className="text-4xl font-medium mb-4">Have any questions?</h1>
         <p className="text-gray-600">Find answers to commonly asked questions below</p>
       </div>
       
-      <div className="space-y-4">
+      <div className="space-y-4 flex flex-col gap-4">
         {faqData.map((faq, index) => (
           <FaqItem
             key={faq.id}
