@@ -39,7 +39,7 @@ const PdfView = () => {
 
   if (error) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gray-50">
+      <div className="flex items-center justify-center min-h-screen">
         <div className="text-center text-red-600">
           <p>{error}</p>
           <button 
@@ -54,7 +54,7 @@ const PdfView = () => {
   }
 
   return (
-    <div className="w-full h-screen bg-gray-100 p-4 mb-20">
+    <div className="w-full h-screen  p-4 mb-20">
       <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-lg h-full">
         {pdfUrl && (
           <iframe
