@@ -59,7 +59,7 @@ const Navbar = () => {
     color: isActive ? 'white' : 'inherit'
   });
 
-  const isTermsPage = location.pathname === "/terms";
+  const isTermsPage = location.pathname === "/terms" || location.pathname === "/privacy";
 
   return ( 
     <div className="navbar">

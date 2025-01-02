@@ -109,12 +109,11 @@ const Footer = () => {
 </div>
 
         <div className="flex flex-col gap-3 mt-5 md:mt-0  w-[30%] mx-auto">
-          <h1 className="font-bold text-[1.3rem]">{content.legalTerm1}</h1>
+          <Link to='/legals' className="font-bold text-[1.3rem]">{content.legalTerm1}</Link>
           <Link to="/terms"  className="text-[1rem] font-light">{content.legalTerm2}</Link>
-          <Link to="/blog"  className="text-[1rem] font-light">{content.legalTerm3}</Link>
+          <Link to="/privacy"  className="text-[1rem] font-light">{content.legalTerm3}</Link>
           <Link to="/careers"  className="text-[1rem] font-light">{content.legalTerm4}</Link>
-          <Link to="/contact"  className="text-[1rem] font-light">Contact</Link>
-          <p to="/portfolio"  className="text-[1rem] font-light">{content.legalTerm5}</p>
+          <Link to="/legals"  className="text-[1rem] font-light">{content.legalTerm5}</Link>
         </div>
         <div className="flex flex-col gap-1 text-[2.3rem] mt-10 lg:mt-[-9.5rem]">
           <h1 className="font-bold text-[1.3rem]">Careers</h1>
@@ -124,9 +123,9 @@ const Footer = () => {
         <div className='flex flex-col items-center'>
         <h1 className="font-bold text-[1.3rem]">Where to find us?</h1>
         <div className='flex gap-5'>
-        <div className="text-[1rem] font-light flex flex-col"><span className='font-bold'>Address 1</span><span>{content.Address1}</span></div>
-        <div className="text-[1rem] font-light flex flex-col"><span className='font-bold'>Address 2</span><span>{content.Address2}</span></div>
-        <div className="text-[1rem] font-light flex flex-col"><span className='font-bold'>Address 3</span><span>{content.Address3}</span></div>
+        <div className="text-[1rem] font-light flex flex-col"><span className='font-bold'>{content.AdressHeading1}</span><span>{content.Address1}</span></div>
+        <div className="text-[1rem] font-light flex flex-col"><span className='font-bold'>{content.AdressHeading2}</span><span>{content.Address2}</span></div>
+        <div className="text-[1rem] font-light flex flex-col"><span className='font-bold'>{content.AdressHeading3}</span><span>{content.Address3}</span></div>
         </div>
         </div>
         <div>

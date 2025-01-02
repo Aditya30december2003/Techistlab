@@ -11,8 +11,8 @@ const PdfView = () => {
       try {
         setIsLoading(true);
         // Get file view URL from storage bucket
-        const fileId = '67768ae7000efae55097'; // Replace with your PDF file ID
-        const result = storage.getFileView('67768ade0019ffee5089', fileId); // 'pdf' is your bucket ID
+        const fileId = '67768b000018f76402b0'; // Replace with your PDF file ID
+        const result = storage.getFileView('67768af70019a7925be6', fileId); // 'pdf' is your bucket ID
         console.log(result);
         setPdfUrl(result);
         setIsLoading(false);

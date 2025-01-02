@@ -15,6 +15,8 @@ import ScrollTop from './components/scrollTop'
 import PageLoadAnimation from './components/PageLoadAnimation'
 import {ThemeProvider} from './Context/ThemeContext'
 import BlogDetails from './pages/BlogDetails'
+import Legals from './pages/Legals'
+import Privacy from './pages/Privacy'
 function App() {
 
   return (
@@ -32,7 +34,9 @@ function App() {
       <Route path="/blog/:id" element={<BlogDetails />} />
       <Route path='/careers' element={<Careers/>}/>
       <Route path='/contact' element={<Contact/>}/>
-      <Route path='/terms' element={<PageLoadAnimation><Terms/></PageLoadAnimation>} />
+      <Route path='/terms' element={<Terms/>} />
+      <Route path='/legals' element={<Legals/>} />
+      <Route path='/privacy' element={<Privacy/>} />
      </Routes> 
      </ThemeProvider>
      <Footer/>
