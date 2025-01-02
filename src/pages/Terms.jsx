@@ -4,7 +4,8 @@ import { SlArrowRight } from "react-icons/sl";
 import {Link} from 'react-router-dom'
 import TermsContent from '../components/TermsContent';
 import Faqs from '../components/Faqs';
-
+import Versions from '../components/Versions'
+import PdfView from '../components/PdfView'
 const Terms = () => {
   return (
     <div className="relative mt-[5rem] md:mt-[10rem] lg:mt-[0rem]">
@@ -29,14 +30,22 @@ const Terms = () => {
       </div>
       </div>
 
-      <div className='flex flex-col gap-[2vh] md:gap-[25vh] lg:gap-[2vh] xl:gap-[60vh]'>
+      <div className='flex flex-col gap-[2vh]'>
 
-      <div className='flex  max-w-[1150px] gap-14 mx-auto mt-14 w-full'>
+      <div className='flex  max-w-[1150px] gap-10 mx-auto mt-4 w-full'>
         <TermsContent/>
       </div>
 
       <div>
         <Faqs/>
+      </div>
+
+      <div>
+        <Versions/>
+      </div>
+
+      <div>
+        <PdfView/>
       </div>
 
       </div>

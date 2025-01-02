@@ -22,7 +22,7 @@
   --text-color: #333333;
   --heading-color: #444444;
   --testimonial-bg-color: rgb(229, 228, 228);
-  
+
 }
 
 [data-theme="dark"] {
@@ -37,6 +37,7 @@ html, body {
   font-optical-sizing: auto;
   background-color: var(--bg-color);
   color: var(--text-color);
+  scroll-behavior: smooth;
 }
 
 .navbg {
@@ -96,6 +97,17 @@ html, body {
     font-size: 20px;
   }
 }
+
+/* Hide the scrollbar but allow scrolling */
+.no-scrollbar {
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For IE and Edge */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
 
 
 
