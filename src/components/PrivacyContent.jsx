@@ -82,7 +82,7 @@ const PrivacyLayout = () => {
                   />
                   <button
                     onClick={() => handleClick(item.id)}
-                    className={`text-lg font-medium duration-200 text-left text-[0.85rem] w-full hover:text-purple-600 ${
+                    className={`text-lg font-medium duration-200 text-left text-[0.95rem] w-full hover:text-purple-600 ${
                       activeTerm === item.id ? "text-purple-700 scale-105" : ""
                     }`}
                   >
@@ -102,7 +102,7 @@ const PrivacyLayout = () => {
                 className="cursor-pointer flex justify-between items-center"
                 onClick={() => toggleSection(section.id)}
               >
-                <h2 className="text-lg font-medium">{section.title}</h2>
+                <h2 className="text-[0.95rem] font-medium">{section.title}</h2>
                 <h3 className="text-lg font-medium">{section.subTitle}</h3>
                 <button
                   className={`text-lg font-medium transition-transform ${
@@ -113,7 +113,7 @@ const PrivacyLayout = () => {
                 </button>
               </div>
               {expandedSections[section.id] && (
-                <div className="mt-4 text-[1rem] lg:text-lg leading-relaxed prose prose-purple max-w-none">
+                <div className="mt-4 text-[0.95rem] lg:text-[0.95rem] leading-relaxed prose prose-purple max-w-none">
                   {section.content}
                 </div>
               )}
