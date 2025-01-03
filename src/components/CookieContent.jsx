@@ -95,7 +95,7 @@ const TermsLayout = () => {
         </div>
 
         {/* Right Content */}
-        <div className="w-full md:w-[70%]">
+        <div className="w-full md:w-[70%]  p-10 md:p-5">
           {contentSections.map((section) => (
             <section key={section.id} id={section.id} className="mb-16">
               <div
