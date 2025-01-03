@@ -102,7 +102,7 @@ const TermsLayout = () => {
                 className="cursor-pointer flex justify-between items-center"
                 onClick={() => toggleSection(section.id)}
               >
-                <h2 className="text-2xl font-medium">{section.title}</h2>
+                <h2 className="text-lg font-medium">{section.title}</h2>
                 <button
                   className={`text-lg font-medium transition-transform ${
                     expandedSections[section.id] ? "rotate-180" : "rotate-0"

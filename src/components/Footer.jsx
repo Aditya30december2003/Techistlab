@@ -112,8 +112,8 @@ const Footer = () => {
           <Link to='/legals' className="font-bold text-[1.3rem]">{content.legalTerm1}</Link>
           <Link to="/terms"  className="text-[1rem] font-light">{content.legalTerm2}</Link>
           <Link to="/privacy"  className="text-[1rem] font-light">{content.legalTerm3}</Link>
-          <Link to="/careers"  className="text-[1rem] font-light">{content.legalTerm4}</Link>
-          <Link to="/legals"  className="text-[1rem] font-light">{content.legalTerm5}</Link>
+          <Link to="/cookies"  className="text-[1rem] font-light">{content.legalTerm4}</Link>
+          <Link to="/legalpolicy"  className="text-[1rem] font-light">{content.legalTerm5}</Link>
         </div>
         <div className="flex flex-col gap-1 text-[2.3rem] mt-10 lg:mt-[-9.5rem]">
           <h1 className="font-bold text-[1.3rem]">Careers</h1>

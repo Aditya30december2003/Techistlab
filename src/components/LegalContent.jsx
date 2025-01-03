@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { databases } from "../Appwrite/appwrite";
 
-const PrivacyLayout = () => {
+const TermsLayout = () => {
   const [termsData, setTermsData] = useState([]);
   const [activeTerm, setActiveTerm] = useState(null);
   const [expandedSections, setExpandedSections] = useState({});
   const databaseId = "67594afc0000cafabf62";
-  const collectionId = "67767cb7003e57b56096";
+  const collectionId = "6777cd11001ffd6006a1";
 
   useEffect(() => {
     const fetchTerms = async () => {
@@ -103,7 +103,6 @@ const PrivacyLayout = () => {
                 onClick={() => toggleSection(section.id)}
               >
                 <h2 className="text-lg font-medium">{section.title}</h2>
-                <h3 className="text-lg font-medium">{section.subTitle}</h3>
                 <button
                   className={`text-lg font-medium transition-transform ${
                     expandedSections[section.id] ? "rotate-180" : "rotate-0"
@@ -125,4 +124,4 @@ const PrivacyLayout = () => {
   );
 };
 
-export default PrivacyLayout;
+export default TermsLayout;

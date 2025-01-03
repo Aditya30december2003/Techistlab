@@ -11,10 +11,10 @@ const LegalPolicy = () => {
       firstGroup: [
         { title: "Privacy Policy", img: "https://images.pexels.com/photos/4160125/pexels-photo-4160125.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", link: "/privacy", BgImg: "/images/header-bg.jpg" },
         { title: "Terms & Conditions", img: "https://images.pexels.com/photos/7821937/pexels-photo-7821937.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", link: "/terms" },
-        { title: "Cookie Policy", img: "https://images.pexels.com/photos/357514/pexels-photo-357514.jpeg", link: "/policy/3" },
+        { title: "Cookie Policy", img: "https://images.pexels.com/photos/357514/pexels-photo-357514.jpeg", link: "/cookies" },
       ],
       secondGroup: [
-        { title: "Legal Policy", img: "https://images.pexels.com/photos/6863183/pexels-photo-6863183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", link: "/policy/4" },
+        { title: "Legal Policy", img: "https://images.pexels.com/photos/6863183/pexels-photo-6863183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", link: "/legalpolicy" },
       ],
     };
 

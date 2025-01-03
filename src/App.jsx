@@ -17,6 +17,8 @@ import {ThemeProvider} from './Context/ThemeContext'
 import BlogDetails from './pages/BlogDetails'
 import Legals from './pages/Legals'
 import Privacy from './pages/Privacy'
+import Cookies from './pages/Cookies'
+import LegalPolicy from './pages/LegalPolicy'
 function App() {
 
   return (
@@ -37,6 +39,8 @@ function App() {
       <Route path='/terms' element={<Terms/>} />
       <Route path='/legals' element={<Legals/>} />
       <Route path='/privacy' element={<Privacy/>} />
+      <Route path='/cookies' element={<Cookies/>} />
+      <Route path='/legalpolicy' element={<LegalPolicy/>} />
      </Routes> 
      </ThemeProvider>
      <Footer/>
