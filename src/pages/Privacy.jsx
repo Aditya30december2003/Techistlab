@@ -30,9 +30,9 @@ const Privacy = () => {
       </div>
       </div>
 
-      <div className='flex flex-col gap-[2vh]'>
+      <div className='flex  flex-col gap-[2vh]'>
 
-      <div className='flex  max-w-[1150px] gap-10 mx-auto mt-4 w-full'>
+      <div className='max-w-[1200px] mx-auto mt-4 w-full'>
         <PrivacyContent/>
       </div>
       

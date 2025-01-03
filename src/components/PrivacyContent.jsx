@@ -67,7 +67,7 @@ const PrivacyLayout = () => {
   }
 
   return (
-    <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8 ">
+    <div className="mx-auto">
       <div className="flex gap-10 py-8">
         {/* Left Navigation */}
         <div className="w-[35%] h-screen sticky top-20 hidden md:block overflow-y-auto no-scrollbar">
@@ -82,7 +82,7 @@ const PrivacyLayout = () => {
                   />
                   <button
                     onClick={() => handleClick(item.id)}
-                    className={`text-lg font-medium duration-200 text-left text-[0.95rem] w-full hover:text-purple-600 ${
+                    className={`text-lg font-medium duration-200 text-left text-[0.98rem] w-full hover:text-purple-600 ${
                       activeTerm === item.id ? "text-purple-700 scale-105" : ""
                     }`}
                   >
