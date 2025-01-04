@@ -1,3 +1,4 @@
+import { useState , useEffect } from 'react';
 import Image from '../assets/terms_bg.jpg'
 import { FaHome } from "react-icons/fa";
 import { SlArrowRight } from "react-icons/sl";
@@ -5,8 +6,26 @@ import {Link} from 'react-router-dom'
 import PrivacyContent from '../components/PrivacyContent';
 import PrivacyVersions from '../components/PrivacyVersions'
 import PrivacyPdf from '../components/PrivacyPdf'
+import { databases } from '../Appwrite/appwrite';
 
 const Privacy = () => {
+   const [legalData, setLegalData] = useState([]); // State to hold fetched data
+    const databaseId = "67594afc0000cafabf62"; // Replace with your Appwrite database ID
+    const collectionId = "677912010015ea00c11b"; // Replace with your Appwrite collection ID
+  
+    useEffect(() => {
+      const fetchLegalData = async () => {
+        try {
+          const response = await databases.listDocuments(databaseId, collectionId);
+          console.log("Fetched Legal Data:", response); // Debug API response
+          setLegalData(response.documents);
+        } catch (error) {
+          console.error("Error fetching legal data:", error);
+        }
+      };
+  
+      fetchLegalData();
+    }, []);
   return (
        <div className="relative mt-[5rem] md:mt-[10rem] lg:mt-[0rem]">
       <div>
@@ -14,7 +33,7 @@ const Privacy = () => {
           className="font-extrabold absolute mt-10 lg:mt-28 z-100 w-full p-10 flex flex-col items-center"
         >
           <h1 className="text-center text-[0.3rem] lg:text-3xl heading text-purple-500">
-        Privacy Policy
+          {legalData.length > 0 ? legalData[0]?.Title || "Legal Policy" : "Loading..."}
           </h1>
           <div className='text-black'>
             <div className='flex items-center gap-3  w-[13%] mt-3 p-1 justify-between'>
