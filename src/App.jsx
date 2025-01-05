@@ -16,9 +16,10 @@ import PageLoadAnimation from './components/PageLoadAnimation'
 import {ThemeProvider} from './Context/ThemeContext'
 import BlogDetails from './pages/BlogDetails'
 import Legals from './pages/Legals'
-import Privacy from './pages/Privacy'
-import Cookies from './pages/Cookies'
-import LegalPolicy from './pages/LegalPolicy'
+// import Privacy from './pages/Privacy'
+// import Cookies from './pages/Cookies'
+// import LegalPolicy from './pages/LegalPolicy'
+import Policy_page from './pages/policy_page'
 function App() {
 
   return (
@@ -36,11 +37,13 @@ function App() {
       <Route path="/blog/:id" element={<BlogDetails />} />
       <Route path='/careers' element={<Careers/>}/>
       <Route path='/contact' element={<Contact/>}/>
-      <Route path='/terms' element={<Terms/>} />
+      {/* <Route path='/terms' element={<Terms/>} /> */}
       <Route path='/legals' element={<Legals/>} />
-      <Route path='/privacy' element={<Privacy/>} />
+      <Route path="/:policyLink" element={<Policy_page />} />
+      {/* <Route path='/privacy' element={<Privacy/>} />
       <Route path='/cookies' element={<Cookies/>} />
-      <Route path='/legalpolicy' element={<LegalPolicy/>} />
+      <Route path='/legalpolicy' element={<LegalPolicy/>} /> */}
+      {/* Dynamic route to load policy page by link */}
      </Routes> 
      </ThemeProvider>
      <Footer/>

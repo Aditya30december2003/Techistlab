@@ -17,6 +17,7 @@ import logo from '../assets/logo.png'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 import { useTheme } from "../Context/ThemeContext";
+import { databases } from "../Appwrite/appwrite";
 
 const Navbar = () => {
   const location = useLocation()
@@ -59,7 +60,38 @@ const Navbar = () => {
     color: isActive ? 'white' : 'inherit'
   });
 
-  const isTermsPage = location.pathname === "/terms" || location.pathname==="/privacy" || location.pathname==="/cookies" || location.pathname==="/legalpolicy";
+  const [documentLinks, setDocumentLinks] = useState([]);
+
+  const fetchDocumentLinks = async () => {
+    try {
+      const response = await databases.listDocuments(
+        "67594afc0000cafabf62", // Replace with your database ID
+        "67797e54002b7f10d927" // Replace with your collection ID
+      );
+  
+      // Process and extract paths (e.g., "terms", "privacy")
+      const documentLinks = response.documents.map((doc) => `/${doc.link}`);
+      console.log(documentLinks); // Example: ["/terms", "/privacy", "/cookies"]
+      return documentLinks;
+    } catch (error) {
+      console.error("Error fetching documents:", error);
+      return [];
+    }
+  };
+
+useEffect(() => {
+  const fetchLinks = async () => {
+    const links = await fetchDocumentLinks();
+    setDocumentLinks(links);
+  };
+
+  fetchLinks();
+}, []);
+
+const isTermsPage = documentLinks.includes(location.pathname);
+
+
+  // const isTermsPage = location.pathname === "/terms" || location.pathname==="/privacy" || location.pathname==="/cookies" || location.pathname==="/legalpolicy";
 
   return ( 
     <div className="navbar">
