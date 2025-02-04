@@ -164,7 +164,7 @@ const Footer = () => {
         </div>
         <div>
           <h2 className="font-bold text-[1.1rem]">Phone no.</h2>
-          <Link className="text-[1rem] font-light">{content.phoneNum}</Link>
+          <Link className="text-[0.8rem] font-light">{content.phoneNum}</Link>
         </div>
         <div>
           <h2 className="font-bold text-[1.1rem]">Email</h2>
