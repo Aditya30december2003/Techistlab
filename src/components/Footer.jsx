@@ -106,7 +106,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-3 mt-5 md:mt-0 w-[30%] mx-auto">
+      <div className="flex flex-col gap-3 mt-5 md:mt-[-2.5rem] w-[30%] mx-auto">
         <Link to="/legals" className="font-bold text-[1.3rem]">
           {content.legalTerm1}
         </Link>
