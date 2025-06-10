@@ -64,7 +64,7 @@ const Footer = () => {
     }
     if (!content) return <BufferAnimation/>;
   return (
-    <div className="w-full bg-gray-300 text-black p-4 lg:p-5">
+    <div className="w-full bg-purple-300 text-black p-4 lg:p-5">
     <div className="mb-0">
       <form
         onSubmit={(e) => {
