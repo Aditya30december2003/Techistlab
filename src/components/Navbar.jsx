@@ -5,7 +5,7 @@ import { FaMoon } from "react-icons/fa";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross1 } from "react-icons/rx";
-import { CiHome } from "react-icons/ci";
+import { CiHome } from "react-icons/ci"; 
 import { MdRoundaboutLeft } from "react-icons/md";
 import { RiBloggerLine } from "react-icons/ri";
 import { HiMiniArrowTrendingUp } from "react-icons/hi2";

@@ -4,7 +4,7 @@ import { Client, Databases, Storage } from 'appwrite';
 const client = new Client();
 client
   .setEndpoint('https://appwrite.hivefinty.com/v1') // Use Appwrite Cloud endpoint
-  .setProject('684728be0036f14c6839'); // Replace with your project ID
+  .setProject('687a02850018b2c4ac7f'); // Replace with your project ID
 
 // Initialize the Databases service
 const databases = new Databases(client);
